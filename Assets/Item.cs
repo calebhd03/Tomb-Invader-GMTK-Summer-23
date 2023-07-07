@@ -8,5 +8,8 @@ public class Item : ScriptableObject
     public bool isAvailableToCraft = true;
     public string tipToShow;
 
-
+    public float damageModifier;
+    public float healthModifier;
+    public float attackSpeedModifier;
+    public float movementSpeedModifier;
 }

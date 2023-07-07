@@ -477,27 +477,6 @@ MonoBehaviour:
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
---- !u!1 &1883841177 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 241554232832613955, guid: aef5ca7b1181b81469344e8f3f4f7eda, type: 3}
-  m_PrefabInstance: {fileID: 8700636116874974568}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1883841182
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1883841177}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 358c9cc75b87327499b67d2c9ccbf858, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageText: {fileID: 0}
-  healthText: {fileID: 0}
-  movementSpeedText: {fileID: 0}
-  attackSpeedText: {fileID: 0}
 --- !u!1 &1973174845
 GameObject:
   m_ObjectHideFlags: 0
@@ -603,14 +582,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 892156587743497090, guid: aef5ca7b1181b81469344e8f3f4f7eda, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2942241984933079297, guid: aef5ca7b1181b81469344e8f3f4f7eda, type: 3}
-      propertyPath: m_TargetGraphic
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 4674243649996903541, guid: aef5ca7b1181b81469344e8f3f4f7eda, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

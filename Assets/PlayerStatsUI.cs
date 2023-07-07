@@ -6,10 +6,11 @@ using UnityEngine;
 public class PlayerStatsUI : MonoBehaviour
 {
     [SerializeField] PlayerStats playerStats;
-    [SerializeField] TextMeshProUGUI damageText;
-    [SerializeField] TextMeshProUGUI healthText;
-    [SerializeField] TextMeshProUGUI movementSpeedText;
-    [SerializeField] TextMeshProUGUI attackSpeedText;
+
+    [SerializeField] PlayerStatsInfo damageInfo;
+    [SerializeField] PlayerStatsInfo healthInfo;
+    [SerializeField] PlayerStatsInfo movementSpeedInfo;
+    [SerializeField] PlayerStatsInfo attackSpeedInfo;
 
     private void Start()
     {
@@ -18,14 +19,17 @@ public class PlayerStatsUI : MonoBehaviour
 
     public void UpdatePlayerUIStats()
     {
-        damageText.text = playerStats.damage.ToString();
-        healthText.text = playerStats.health.ToString();
-        movementSpeedText.text = playerStats.movementSpeed.ToString();
-        attackSpeedText.text = playerStats.attackSpeed.ToString();
+        damageInfo.setText(playerStats.damage, 0);
+        healthInfo.setText(playerStats.health, 0);
+        movementSpeedInfo.setText(playerStats.movementSpeed, 0);
+        attackSpeedInfo.setText(playerStats.attackSpeed, 0);
     }
 
-    public void modifiedStat(Item item)
+    public void ModifiedStat(Item item)
     {
-        
+        damageInfo.setText(playerStats.damage, item.damageModifier);
+        healthInfo.setText(playerStats.health, item.healthModifier);
+        movementSpeedInfo.setText(playerStats.movementSpeed, item.movementSpeedModifier);
+        attackSpeedInfo.setText(playerStats.attackSpeed, item.attackSpeedModifier);
     }
 }
