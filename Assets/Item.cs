@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Player Settings")]
+[CreateAssetMenu(fileName = "New Item")]
 public class Item : ScriptableObject
 {
     new public string name = "New Item";
