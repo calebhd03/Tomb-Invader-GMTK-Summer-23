@@ -59,11 +59,11 @@ public class PlayerMove : MonoBehaviour
     {
         if (rb.velocity.x > 0)
         {
-            transform.localScale = new Vector2(localScale.x, localScale.y);
+            transform.localScale = new Vector3(localScale.x, localScale.y);
         }
         else if (rb.velocity.x < 0)
         {
-            transform.localScale = new Vector2(-localScale.x, localScale.y);
+            transform.localScale = new Vector3(-localScale.x, localScale.y);
         }
     }
 }
