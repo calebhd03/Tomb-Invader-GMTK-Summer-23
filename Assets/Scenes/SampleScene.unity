@@ -582,6 +582,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 892156587743497090, guid: aef5ca7b1181b81469344e8f3f4f7eda, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2942241984933079297, guid: aef5ca7b1181b81469344e8f3f4f7eda, type: 3}
+      propertyPath: m_TargetGraphic
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8700636117511281833, guid: aef5ca7b1181b81469344e8f3f4f7eda, type: 3}
       propertyPath: m_Name
       value: Canvas
