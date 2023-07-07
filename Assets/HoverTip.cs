@@ -6,11 +6,11 @@ using UnityEngine.EventSystems;
 public class HoverTip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     private string tipToShow = "";
-    private float timeToWait = .5f;
+    private float timeToWait = .2f;
+
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Debug.Log("Enter");
         StopAllCoroutines();
         StartCoroutine(StartTimer());
     }

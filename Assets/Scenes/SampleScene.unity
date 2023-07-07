@@ -1062,6 +1062,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8700636116323701422, guid: aef5ca7b1181b81469344e8f3f4f7eda, type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8700636116323701422, guid: aef5ca7b1181b81469344e8f3f4f7eda, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8700636117511281833, guid: aef5ca7b1181b81469344e8f3f4f7eda, type: 3}
       propertyPath: m_Name
       value: Canvas

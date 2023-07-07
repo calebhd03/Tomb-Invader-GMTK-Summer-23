@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class ItemSlot : MonoBehaviour
+public class ItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public Item item;
     [SerializeField] Image image;
@@ -25,7 +26,7 @@ public class ItemSlot : MonoBehaviour
         if (!item.isAvailableToCraft)
             return;
 
-        hoverTip.SetTipToShow(item.tipToShow);
+        SendTipToShow();
 
         button.interactable = true;
         image.enabled = true;
@@ -34,7 +35,29 @@ public class ItemSlot : MonoBehaviour
 
     public void CraftItem()
     {
+        item.isAvailableToCraft= false;
         button.interactable = false;
         image.enabled = false;
+    }
+
+    private void SendTipToShow()
+    {
+        string tip = "";
+        tip += item.name;
+        tip += "\n";
+        tip += item.description;
+
+
+        hoverTip.SetTipToShow(tip);
+    }
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        Debug.Log("ENTER!!!");
+        PlayerStatsUI.CraftingItemSelected(item);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        PlayerStatsUI.CraftingItemUnSelected();
     }
 }
