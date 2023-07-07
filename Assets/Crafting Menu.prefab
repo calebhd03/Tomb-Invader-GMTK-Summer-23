@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e54d6aa6a1039f74e9cd2c67ebf2db27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CraftingGrid: {fileID: 0}
+  CraftingGrid: {fileID: 5396150738607835021}
 --- !u!1 &5396150738607835020
 GameObject:
   m_ObjectHideFlags: 0
@@ -2330,6 +2330,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5396150738607835021}
     m_Modifications:
+    - target: {fileID: 974051680425183838, guid: 42db9b9a10bb598498714b8fa423b59b, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 11400000, guid: cf5511e0b3781dc4b8e3fe96e72e73ca, type: 2}
     - target: {fileID: 1941989820607596082, guid: 42db9b9a10bb598498714b8fa423b59b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
