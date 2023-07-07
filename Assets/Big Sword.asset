@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f0c4c2d1ee40874191ff92520021e4d, type: 3}
   m_Name: Big Sword
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  name: New Item
+  sprite: {fileID: 21300000, guid: 88b2bf9fc2c5e2844bb3de9c04fbe0a6, type: 3}
+  isAvailableToCraft: 1
+  tipToShow: Big Sword aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa

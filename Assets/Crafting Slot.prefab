@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1941989820607596080}
   - component: {fileID: 1941989820607596081}
   - component: {fileID: 974051680425183838}
+  - component: {fileID: 3250575855983612643}
   m_Layer: 5
   m_Name: Crafting Slot
   m_TagString: Untagged
@@ -122,7 +123,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1941989820607596080}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 974051680425183838}
+        m_TargetAssemblyTypeName: ItemSlot, Assembly-CSharp
+        m_MethodName: CraftItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &974051680425183838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,7 +150,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 0}
   image: {fileID: 1941989820790715486}
+  hoverTip: {fileID: 3250575855983612643}
   button: {fileID: 1941989820607596081}
+--- !u!114 &3250575855983612643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1941989820607596083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3824d65f8dc1c814abd95fe72af00ba7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1941989820790715472
 GameObject:
   m_ObjectHideFlags: 0

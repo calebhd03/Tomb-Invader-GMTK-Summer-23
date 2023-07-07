@@ -5,8 +5,9 @@ using UnityEngine.UI;
 
 public class ItemSlot : MonoBehaviour
 {
-    [SerializeField] Item item;
+    public Item item;
     [SerializeField] Image image;
+    [SerializeField] HoverTip hoverTip;
     [SerializeField] Button button;
 
 
@@ -17,19 +18,21 @@ public class ItemSlot : MonoBehaviour
         AddItem();
     }
 
-    void AddItem()
+    public void AddItem()
     {
         if (item == null)
             return;
         if (!item.isAvailableToCraft)
             return;
 
+        hoverTip.SetTipToShow(item.tipToShow);
+
         button.interactable = true;
         image.enabled = true;
         image.sprite = item.sprite;
     }
 
-    void CraftItem()
+    public void CraftItem()
     {
         button.interactable = false;
         image.enabled = false;
