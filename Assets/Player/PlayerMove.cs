@@ -46,7 +46,7 @@ public class PlayerMove : MonoBehaviour
             directionToEnemy = (target.position - transform.position).normalized;
 
             // Move the player towards the target enemy
-            rb.velocity = new Vector2(directionToEnemy.x, directionToEnemy.y) * moveSpeed;
+            rb.velocity = directionToEnemy * moveSpeed;
         }
         else
         {
