@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class ItemSlotManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] List<ItemSlot> slots;
+    [SerializeField] List<Item> items;
+
+    private void Start()
     {
-        
     }
 
-    // Update is called once per frame
-    void Update()
+    public void FillItemSlots()
     {
-        
+        foreach(ItemSlot slot in slots)
+        {
+
+        }
     }
+
 }
