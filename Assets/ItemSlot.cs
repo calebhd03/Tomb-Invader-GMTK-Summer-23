@@ -8,25 +8,19 @@ public class ItemSlot : MonoBehaviour
     [SerializeField] Item item;
     [SerializeField] Image image;
 
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        AddItem();
     }
 
-    void UpdateItem()
+    void AddItem()
     {
-        if(item == null)
-        {
-
-        }
-        else
-        {
-            image.sprite = item.sprite;
-        }
+        image.sprite = item.sprite;
     }
 
-    void BuyItem()
+    void CraftItem()
     {
 
     }
