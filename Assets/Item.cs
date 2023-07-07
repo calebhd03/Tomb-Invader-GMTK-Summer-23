@@ -7,4 +7,6 @@ public class Item : ScriptableObject
     public Sprite sprite;
     public bool isAvailableToCraft = true;
     public string tipToShow;
+
+
 }

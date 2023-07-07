@@ -1,17 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerStatsUI : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] PlayerStats playerStats;
+    [SerializeField] TextMeshProUGUI damageText;
+    [SerializeField] TextMeshProUGUI healthText;
+    [SerializeField] TextMeshProUGUI movementSpeedText;
+    [SerializeField] TextMeshProUGUI attackSpeedText;
+
+    private void Start()
     {
-        
+        UpdatePlayerUIStats();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void UpdatePlayerUIStats()
+    {
+        damageText.text = playerStats.damage.ToString();
+        healthText.text = playerStats.health.ToString();
+        movementSpeedText.text = playerStats.movementSpeed.ToString();
+        attackSpeedText.text = playerStats.attackSpeed.ToString();
+    }
+
+    public void modifiedStat(Item item)
     {
         
     }
