@@ -11,6 +11,21 @@ public class EnemyCS : ScriptableObject
     [SerializeField]
     private float _value;
 
+    public float chaseDistance;
+    public float chaseSpeed;
+
+    public float damage;
+    public float maxHealth;
+
+    public float attackDistance;
+    public float attackSpeed;
+    public float arcHeight;
+
+    public float startTime;
+
+    public float idleSpeed;
+    public float idleDistance;
+
     public float Value
     {
         get { return _value; }

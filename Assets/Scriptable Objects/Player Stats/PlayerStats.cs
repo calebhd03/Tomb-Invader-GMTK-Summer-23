@@ -5,14 +5,14 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Player Stats")]
 public class PlayerStats : ScriptableObject
 {
-    public int redMaterials = 0;
-    public int purpleMaterials = 0;
-    public int yellowMaterials = 0;
+    public int redMaterials;
+    public int purpleMaterials;
+    public int yellowMaterials;
 
-    public float damage = 1;
-    public float attackSpeed = 1f;
-    public float health = 1f;
-    public float movementSpeed = 1f;
+    public float damage;
+    public float attackSpeed;
+    public float health;
+    public float movementSpeed;
 
     public int maxInventory;
     public List<Item> equippedItems;
