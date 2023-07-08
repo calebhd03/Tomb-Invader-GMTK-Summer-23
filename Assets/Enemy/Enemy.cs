@@ -9,17 +9,21 @@ public class Enemy : MonoBehaviour
     [SerializeField] Transform player;
     [SerializeField] Rigidbody2D rb;
     [SerializeField] NavMeshAgent navMeshAgent;
-
+    [SerializeField] GameObject WeaponHolder;
+    [SerializeField] Health health;
     [SerializeField] EnemyCS enemyCS;
+    [SerializeField] GameObject spriteHolder;
 
+
+    WeaponSwing weaponSwing;
     bool chasingPlayer = false;
     float distanceToPlayer = float.MaxValue;
 
-    Ray ray;
     // Start is called before the first frame update
     void Start()
     {
-        
+        FindWeaponSwing();
+        health.SetMaxHealth(enemyCS.maxHealth);
     }
 
     // Update is called once per frame
@@ -29,20 +33,49 @@ public class Enemy : MonoBehaviour
         animator.SetFloat("DistanceToPlayer", distanceToPlayer);
     }
 
+    public void FindWeaponSwing()
+    {
+        weaponSwing = WeaponHolder.GetComponentInChildren<WeaponSwing>();
+    }
+
+    public void WeaponSwong()
+    {
+        weaponSwing.Swing(enemyCS.damage);
+    }
+
     public void StartChasePlayer()
     {
         chasingPlayer = true;
+        navMeshAgent.isStopped = false;
         StartCoroutine(ChasingPlayer());
     }
     public void StopChasePlayer()
     {
         chasingPlayer = false;
+        navMeshAgent.isStopped = true;
+    }
+
+    public void LookAtPlayer()
+    {
+        Vector3 oldScale = spriteHolder.transform.localScale;
+        if(player.transform.position.x < this.transform.position.x)
+        {
+            if (oldScale.x >0)
+                spriteHolder.transform.localScale = new Vector3(oldScale.x * -1, oldScale.y, oldScale.z); ;
+        }
+        else
+        {
+            if (oldScale.x < 0)
+                spriteHolder.transform.localScale = new Vector3(oldScale.x * -1, oldScale.y, oldScale.z);
+        }
+
     }
 
     IEnumerator ChasingPlayer()
     {
         while(chasingPlayer)
         {
+            LookAtPlayer();
             navMeshAgent.SetDestination(player.transform.position);
             yield return null;
         }
@@ -62,17 +95,5 @@ public class Enemy : MonoBehaviour
         //}
         //parentSpace.spawnPoint = "00000000";
         //Destroy(transform.parent.gameObject);
-    }
-
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        // If collider gameobject comes into contact with tag
-        // Decrease health
-    }
-
-    void OnTriggerStay2D(Collider2D col)
-    {
-        // Have an else if statement when it comes into contact with tag of sword melee
-        // If hit by swoid, get vector/distance between player and enemy, and apply force into whichever direction player is facing
     }
 }

@@ -14,6 +14,9 @@ public class EnemyCS : ScriptableObject
     public float chaseDistance;
     public float chaseSpeed;
 
+    public float damage;
+    public float maxHealth;
+
     public float attackDistance;
     public float attackSpeed;
     public float arcHeight;
