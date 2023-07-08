@@ -11,6 +11,7 @@ public class ItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     [SerializeField] Image image;
     [SerializeField] HoverTip hoverTip;
     [SerializeField] Button button;
+    [SerializeField] GameObject closeButton;
 
     [SerializeField] bool craftingSlot = false;
 
@@ -22,18 +23,28 @@ public class ItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public void AddItem()
     {
-        if (item == null)
-            return;
 
-        SendTipToShow();
+        SendTipToShow(false);
 
         button.interactable = true;
+        button.enabled = true;
         image.enabled = true;
-        image.sprite = item.sprite; 
-        
+
+        if(item != null)
+        {
+            image.sprite = item.sprite;
+        }
+
+        if(closeButton != null) closeButton.SetActive(true);
+
         if (craftingSlot && playerStats.equippedItems.Contains(item))
         {
             RemoveItem();
+        }
+        if (item == null)
+        {
+            RemoveItem();
+            return;
         }
     }
     public void AddItem(Item i)
@@ -56,8 +67,13 @@ public class ItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public void RemoveItem()
     {
+        if (closeButton != null) closeButton.SetActive(false);
+
+        button.enabled = false;
         button.interactable = false;
         image.enabled = false;
+
+        SendTipToShow(true);
 
         CraftingMaterialsUI.UpdateCraftingUI();
 
@@ -79,11 +95,20 @@ public class ItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         playerStats.equippedItems.Remove(item);
 
         RemoveItem();
+        CraftingMenuUI.RestockItem(item);
     }
 
-    private void SendTipToShow()
+    private void SendTipToShow(bool blank)
     {
         string tip = "";
+
+        if(blank || item == null)
+        {
+            hoverTip.SetTipToShow(tip);
+            return;
+        }
+
+
         tip += item.name;
         tip += "\n";
         tip += item.description;

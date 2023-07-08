@@ -12,19 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c1a0e48e757fbd47906b3070902d540, type: 3}
   m_Name: Player Stats
   m_EditorClassIdentifier: 
-  redMaterials: 25
-  purpleMaterials: 21
-  yellowMaterials: 10
+  redMaterials: 54
+  purpleMaterials: 51
+  yellowMaterials: 42
   damage: 1
   attackSpeed: 1
   health: 1
   movementSpeed: 1
   maxInventory: 8
   equippedItems:
-  - {fileID: 11400000, guid: 2b9c99debc7681344ab50468e4c08673, type: 2}
-  - {fileID: 11400000, guid: 1a6fb3bdda6cf3f4babfb63445e4ebbc, type: 2}
-  - {fileID: 11400000, guid: f05a11e8c1d91a646abdb7f22ff9366f, type: 2}
-  - {fileID: 11400000, guid: d0ae4ab733c9cf241b949f7d03438fd1, type: 2}
   - {fileID: 11400000, guid: 9c75f41857925f14998555feb6c0b926, type: 2}
-  - {fileID: 11400000, guid: cb898dfcae1b1f1418292475e670b8a4, type: 2}
-  - {fileID: 11400000, guid: cf5511e0b3781dc4b8e3fe96e72e73ca, type: 2}
+  - {fileID: 11400000, guid: 2b9c99debc7681344ab50468e4c08673, type: 2}
+  - {fileID: 11400000, guid: 8d35f25a77dd1b34e8d9f1b85dd7fe56, type: 2}

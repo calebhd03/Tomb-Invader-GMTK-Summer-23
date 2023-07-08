@@ -38,6 +38,12 @@ public class InventoryUI : MonoBehaviour
             return;
         }
 
+        if(playerStats.redMaterials - item.redCost < 0 || playerStats.purpleMaterials - item.purpleCost < 0 || playerStats.redMaterials - item.yellowCost < 0)
+        {
+            Debug.Log("Note enought materials");
+            return;
+        }
+
         ItemSlot slotAddedTo = inventorySlots[playerStats.equippedItems.Count];
 
         slotAddedTo.AddItem(item);
