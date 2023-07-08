@@ -17,6 +17,10 @@ public class EnemyCS : ScriptableObject
     public float damage;
     public float maxHealth;
 
+    public int monsterBloodGain;
+    public int arcaneSandGain;
+    public int theoriteGain;
+
     public float attackDistance;
     public float attackSpeed;
     public float arcHeight;
