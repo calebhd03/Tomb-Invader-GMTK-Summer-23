@@ -1,18 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using TMPro;
 using UnityEngine;
 
 public class LossTracker : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] WaveSpawnerScriptableObject waveSpawnerSO;
+    [SerializeField] GameObject LossCounter;
+
+    List<TextMeshProUGUI> counters;
+    private void Start()
     {
-        
+        counters = LossCounter.GetComponentsInChildren<TextMeshProUGUI>().ToList<TextMeshProUGUI>();
+
+        FillOutLossCounters();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void FillOutLossCounters()
     {
-        
+        for(int i=0; i<waveSpawnerSO.WavesTried; i++)
+        {
+            TextMeshProUGUI text = counters[i];
+
+            text.text = "X";
+            text.color = Color.red;
+        }
     }
 }
