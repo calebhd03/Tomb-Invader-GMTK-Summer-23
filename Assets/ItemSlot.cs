@@ -12,7 +12,7 @@ public class ItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     [SerializeField] HoverTip hoverTip;
     [SerializeField] Button button;
 
-
+    [SerializeField] bool craftingSlot = false;
 
     // Start is called before the first frame update
     void Start()
@@ -29,22 +29,24 @@ public class ItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
         button.interactable = true;
         image.enabled = true;
-        image.sprite = item.sprite;
+        image.sprite = item.sprite; 
+        
+        if (craftingSlot && playerStats.equippedItems.Contains(item))
+        {
+            RemoveItem();
+        }
     }
     public void AddItem(Item i)
     {
-        if (item == null || !item.isAvailableToCraft)
+        if (i == null)
         {
             RemoveItem();
             return;
         }
 
-        this.item = i;
-        SendTipToShow();
+        item = i;
 
-        button.interactable = true;
-        image.enabled = true;
-        image.sprite = item.sprite;
+        AddItem();
     }
 
     public void TestCraftItem()
@@ -74,11 +76,9 @@ public class ItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         playerStats.purpleMaterials += item.purpleCost / 2;
         playerStats.yellowMaterials += item.yellowCost / 2;
 
-        item.isAvailableToCraft = false;
-        button.interactable = false;
-        image.enabled = false;
+        playerStats.equippedItems.Remove(item);
 
-        CraftingMaterialsUI.UpdateCraftingUI();
+        RemoveItem();
     }
 
     private void SendTipToShow()

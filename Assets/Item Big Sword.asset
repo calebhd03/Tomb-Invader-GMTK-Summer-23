@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f0c4c2d1ee40874191ff92520021e4d, type: 3}
+  m_Name: Item Big Sword
+  m_EditorClassIdentifier: 
+  name: Big Sword
+  sprite: {fileID: 21300000, guid: 88b2bf9fc2c5e2844bb3de9c04fbe0a6, type: 3}
+  isAvailableToCraft: 0
+  description: Increases damage, but swings slowly
+  redCost: 3
+  purpleCost: 3
+  yellowCost: 3
+  damageModifier: 2
+  healthModifier: 0
+  attackSpeedModifier: -0.3
+  movementSpeedModifier: 0

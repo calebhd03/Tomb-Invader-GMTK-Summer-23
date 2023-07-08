@@ -10,16 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4f0c4c2d1ee40874191ff92520021e4d, type: 3}
-  m_Name: Small Sword
+  m_Name: Item Spear
   m_EditorClassIdentifier: 
-  name: Small Sword
-  sprite: {fileID: 21300000, guid: 88b2bf9fc2c5e2844bb3de9c04fbe0a6, type: 3}
-  isAvailableToCraft: 0
-  description: Less damage but swings faster
-  redCost: 2
-  purpleCost: 2
-  yellowCost: 2
-  damageModifier: -0.2
+  name: Spear
+  sprite: {fileID: 21300000, guid: 8bbf47b7fc0607f49844818d82991639, type: 3}
+  description: Reqular Poke
+  redCost: 3
+  purpleCost: 3
+  yellowCost: 6
+  damageModifier: 1
   healthModifier: 0
-  attackSpeedModifier: 0.4
-  movementSpeedModifier: 0
+  attackSpeedModifier: 0
+  movementSpeedModifier: -0.2

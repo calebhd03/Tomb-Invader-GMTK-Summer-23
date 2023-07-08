@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f0c4c2d1ee40874191ff92520021e4d, type: 3}
+  m_Name: Item Small Knife
+  m_EditorClassIdentifier: 
+  name: Small Knife
+  sprite: {fileID: 21300000, guid: 82b528c74e22fcf47892f3f3b6c77fba, type: 3}
+  description: Quick poke
+  redCost: 3
+  purpleCost: 3
+  yellowCost: 6
+  damageModifier: -0.2
+  healthModifier: 0
+  attackSpeedModifier: 2
+  movementSpeedModifier: 2

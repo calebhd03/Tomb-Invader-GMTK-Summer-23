@@ -13,20 +13,32 @@ public class InventoryUI : MonoBehaviour
     public void Start()
     {
         inventorySlots = GetComponentsInChildren<ItemSlot>();
+        UpdateInventoryUI();
     }
 
     public void CraftItem(GameObject itemSlotObj)
     {
         ItemSlot itemSlot = itemSlotObj.GetComponent<ItemSlot>();
-        Debug.Log("Testing craft ");
-        if(itemSlot == null) return;
 
-        Debug.Log("Testing craft " + playerStats.maxInventory + " >= ");
-        if (playerStats.maxInventory < playerStats.equippedItems.Count) return;
+        if (itemSlot == null)
+        {
+            Debug.LogWarning("Item slot is null");
+            return;
+        }
+        if (playerStats.maxInventory <= playerStats.equippedItems.Count)
+        {
+            Debug.Log("Inventory full");
+            return;
+        }
 
+        Item item = itemSlot.item;
+        if (playerStats.equippedItems.Contains(item))
+        {
+            Debug.Log("Already have item");
+            return;
+        }
 
         ItemSlot slotAddedTo = inventorySlots[playerStats.equippedItems.Count];
-        Item item = itemSlot.item;
 
         slotAddedTo.AddItem(item);
 
@@ -36,7 +48,6 @@ public class InventoryUI : MonoBehaviour
         playerStats.equippedItems.Add(item);
 
         int index = playerStats.equippedItems.Count - 1;
-        Debug.Log("Crafted + " + item.name + " : at index " + index);
 
         UpdateInventoryUI();
     }
@@ -46,8 +57,15 @@ public class InventoryUI : MonoBehaviour
         int indexInventory = 0;
         foreach(ItemSlot slot in inventorySlots)
         {
-            slot.AddItem(playerStats.equippedItems[indexInventory]);
-            Debug.Log("indexInventory " + indexInventory);
+            if (playerStats.equippedItems.Count <= indexInventory)
+            {
+                slot.AddItem(null);
+            }
+            else
+            {
+                slot.AddItem(playerStats.equippedItems[indexInventory]);
+            }
+
             indexInventory++;
         }
     }
@@ -55,6 +73,10 @@ public class InventoryUI : MonoBehaviour
     private void OnEnable()
     {
         ItemCrafted += CraftItem;
+    }
+    private void OnDisable()
+    {
+        ItemCrafted -= CraftItem;
     }
 
 }
