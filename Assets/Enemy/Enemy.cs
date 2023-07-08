@@ -7,7 +7,6 @@ public class Enemy : MonoBehaviour, Death
 {
     [SerializeField] Animator animator;
     [SerializeField] Transform player;
-    [SerializeField] Rigidbody2D rb;
     [SerializeField] NavMeshAgent navMeshAgent;
     [SerializeField] GameObject WeaponHolder;
     [SerializeField] Health health;
