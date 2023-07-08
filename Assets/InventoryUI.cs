@@ -47,6 +47,8 @@ public class InventoryUI : MonoBehaviour
         foreach(ItemSlot slot in inventorySlots)
         {
             slot.AddItem(playerStats.equippedItems[indexInventory]);
+            Debug.Log("indexInventory " + indexInventory);
+            indexInventory++;
         }
     }
 
