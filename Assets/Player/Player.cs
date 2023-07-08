@@ -97,6 +97,9 @@ public class Player : MonoBehaviour
         Debug.Log("Attack performed");
     }
 
+    // Can the attack state machine be run within this script?
+    // If so, there can be separate voids that hold code for the indivual weapon attacks
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;

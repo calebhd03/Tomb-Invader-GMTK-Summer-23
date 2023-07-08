@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class SwordAttack : MonoBehaviour
 {
-    private float swingCooldown = 1f;
-    private float attackRadius = 2f;
-    private float rotationSpeed = 360f;
+    private float swingCooldown;
+    private float attackRadius;
+    private float rotationSpeed;
     private GameObject sword;
 
     public void SwingSword()
