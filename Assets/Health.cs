@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class Health: MonoBehaviour
 {
+    [SerializeField] Death objectToDie;
+
     private float maxHealth;
     private float currentHealth;
+
+
 
     public float SetMaxHealth()
     {
@@ -41,6 +45,7 @@ public class Health: MonoBehaviour
 
     public void Died()
     {
+        objectToDie.Died();
         Debug.Log(this.gameObject.name + " Died");
     }
 }
