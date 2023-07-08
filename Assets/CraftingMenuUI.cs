@@ -14,11 +14,4 @@ public class CraftingMenuUI : MonoBehaviour
         slots = CraftingGrid.GetComponentsInChildren<ItemSlot>();
     }
 
-    private void UpdateUI()
-    {
-        foreach(ItemSlot slot in slots)
-        {
-
-        }
-    }
 }
