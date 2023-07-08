@@ -14,8 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Small Sword
   sprite: {fileID: 21300000, guid: 88b2bf9fc2c5e2844bb3de9c04fbe0a6, type: 3}
-  isAvailableToCraft: 1
+  isAvailableToCraft: 0
   description: Less damage but swings faster
+  redCost: 2
+  purpleCost: 2
+  yellowCost: 2
   damageModifier: -0.2
   healthModifier: 0
   attackSpeedModifier: 0.4

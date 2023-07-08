@@ -14,8 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Big Sword
   sprite: {fileID: 21300000, guid: 88b2bf9fc2c5e2844bb3de9c04fbe0a6, type: 3}
-  isAvailableToCraft: 1
-  tipToShow: Does increased damage, but swings slowly
+  isAvailableToCraft: 0
+  description: Increases damage, but swings slowly
+  redCost: 3
+  purpleCost: 3
+  yellowCost: 3
   damageModifier: 2
   healthModifier: 0
   attackSpeedModifier: -0.3

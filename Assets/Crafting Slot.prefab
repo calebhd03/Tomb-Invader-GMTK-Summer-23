@@ -126,7 +126,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 974051680425183838}
         m_TargetAssemblyTypeName: ItemSlot, Assembly-CSharp
-        m_MethodName: CraftItem
+        m_MethodName: TestCraftItem
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -149,6 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 0}
+  playerStats: {fileID: 11400000, guid: ae9bc83ef4d71e049a0591b7f985e29f, type: 2}
   image: {fileID: 1941989820790715486}
   hoverTip: {fileID: 3250575855983612643}
   button: {fileID: 1941989820607596081}

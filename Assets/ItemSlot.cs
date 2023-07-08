@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class ItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public Item item;
+    [SerializeField] PlayerStats playerStats;
     [SerializeField] Image image;
     [SerializeField] HoverTip hoverTip;
     [SerializeField] Button button;
@@ -23,8 +24,6 @@ public class ItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         if (item == null)
             return;
-        if (!item.isAvailableToCraft)
-            return;
 
         SendTipToShow();
 
@@ -32,12 +31,54 @@ public class ItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         image.enabled = true;
         image.sprite = item.sprite;
     }
-
-    public void CraftItem()
+    public void AddItem(Item i)
     {
-        item.isAvailableToCraft= false;
+        if (item == null || !item.isAvailableToCraft)
+        {
+            RemoveItem();
+            return;
+        }
+
+        this.item = i;
+        SendTipToShow();
+
+        button.interactable = true;
+        image.enabled = true;
+        image.sprite = item.sprite;
+    }
+
+    public void TestCraftItem()
+    {
+        InventoryUI.ItemCrafted(this.gameObject);
+    }
+
+    public void RemoveItem()
+    {
         button.interactable = false;
         image.enabled = false;
+
+        CraftingMaterialsUI.UpdateCraftingUI();
+
+    }
+
+    public void BuyItem()
+    {
+        playerStats.redMaterials -= item.redCost;
+        playerStats.purpleMaterials -= item.purpleCost;
+        playerStats.yellowMaterials -= item.yellowCost;
+    }
+
+    public void RefundItem()
+    {
+        playerStats.redMaterials += item.redCost / 2;
+        playerStats.purpleMaterials += item.purpleCost / 2;
+        playerStats.yellowMaterials += item.yellowCost / 2;
+
+        item.isAvailableToCraft = false;
+        button.interactable = false;
+        image.enabled = false;
+
+        CraftingMaterialsUI.UpdateCraftingUI();
     }
 
     private void SendTipToShow()
@@ -52,7 +93,6 @@ public class ItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     }
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Debug.Log("ENTER!!!");
         PlayerStatsUI.CraftingItemSelected(item);
     }
 

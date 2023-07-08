@@ -8,6 +8,10 @@ public class Item : ScriptableObject
     public bool isAvailableToCraft = true;
     public string description;
 
+    public int redCost = 0;
+    public int purpleCost = 0;
+    public int yellowCost = 0;
+
     public float damageModifier;
     public float healthModifier;
     public float attackSpeedModifier;
