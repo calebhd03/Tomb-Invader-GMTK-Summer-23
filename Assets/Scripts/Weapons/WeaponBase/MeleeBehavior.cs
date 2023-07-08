@@ -35,7 +35,7 @@ public class MeleeBehaviour : MonoBehaviour
         {
             // Reference enemy scriptable object
             EnemyStats enemy = col.GetComponent<EnemyStats>();
-            //enemy.TakeDamage(currentDamage);
+            enemy.TakeDamage(currentDamage);
         }
     }
 }
