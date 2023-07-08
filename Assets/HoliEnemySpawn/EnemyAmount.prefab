@@ -44,4 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be501675b17ab8d49860646e1677026e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnAmount: {fileID: 11400000, guid: 657f92c787108884b9d3ee0d258644d5, type: 2}
+  wSO: {fileID: 11400000, guid: 594e87c6cb5391949a37bb6c2795a780, type: 2}

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -7,30 +8,31 @@ public class NextEnemyUI : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI text;
 
-    
-    public int mummy = 0;
-    public int hound = 0;
+    public static Action<WaveSpawnerScriptableObject> FillList;
 
-    public void ClearEnemyList()
-    {
-        mummy = 0;
-        hound = 0;
-        text.text = "";
-    }
-
-    public void Start()
-    {
-        FillEnemyList();
-    }
-
-    public void FillEnemyList()
+    public void FillEnemyList(WaveSpawnerScriptableObject wSO)
     {
         text.text = "";
 
-        if (mummy > 0)
-            text.text += "\nMummies " + mummy;
-        if (hound > 0)
-            text.text += "\nHounds " + hound;
+        if (wSO.tombScarabs > 0)
+            text.text += "\nTomb Scarabs " + wSO.tombScarabs;
+        if (wSO.sapperAsp > 0)
+            text.text += "\nSapper Asps " + wSO.sapperAsp;
+        if (wSO.hauntedJar > 0)
+            text.text += "\nHaunted Jars " + wSO.hauntedJar;
+        if (wSO.boneWarrior > 0)
+            text.text += "\nBone Warriors " + wSO.boneWarrior;
+        if (wSO.sphinxGolem > 0)
+            text.text += "\nSphinx Golems " + wSO.sphinxGolem;
+    }
+
+    private void OnEnable()
+    {
+        FillList += FillEnemyList;
+    }
+    private void OnDisable()
+    {
+        FillList -= FillEnemyList;
     }
 
 }
