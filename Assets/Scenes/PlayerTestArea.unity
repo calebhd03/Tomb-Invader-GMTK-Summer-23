@@ -564,7 +564,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1261843836}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a525443a796e20b4d9d1b66854a19448, type: 3}
   m_Name: 
@@ -952,6 +952,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2682576216245280841, guid: 48348d1e514f16249bd8081fafae9908, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3889248993036457186, guid: 48348d1e514f16249bd8081fafae9908, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -1000,5 +1004,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3889248993036457196, guid: 48348d1e514f16249bd8081fafae9908, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1261843836}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48348d1e514f16249bd8081fafae9908, type: 3}

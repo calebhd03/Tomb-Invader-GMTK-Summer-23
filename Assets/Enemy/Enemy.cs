@@ -4,6 +4,16 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    [SerializeField] Animator animator;
+    [SerializeField] GameObject player;
+    [SerializeField] Rigidbody2D rb;
+
+    [SerializeField] EnemyCS enemyCS;
+
+    bool chasingPlayer = false;
+    float distanceToPlayer = float.MaxValue;
+
+    Ray ray;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,8 +23,38 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        distanceToPlayer = Vector3.Distance(transform.position, player.transform.forward);
+
+        Debug.Log(distanceToPlayer);
+
+        animator.SetFloat("DistanceToPlayer", distanceToPlayer);
     }
+
+    public void WalkTowardsPlayer()
+    {
+        chasingPlayer= true;
+        StartCoroutine(ChasingPlayer());
+    }
+
+    public void StopWalkingTowardsPlayer()
+    {
+        chasingPlayer = true;
+    }
+
+    IEnumerator ChasingPlayer()
+    {
+        while(chasingPlayer) 
+        {
+            Debug.Log("waking towards");
+
+            if(distanceToPlayer > enemyCS.attackDistance)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, player.transform.position, enemyCS.chaseSpeed * Time.deltaTime);
+            }
+            yield return null;
+        }
+    }
+
 
     void Die()
     {
