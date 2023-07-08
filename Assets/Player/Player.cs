@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    // References
+    [SerializeField] private PlayerStats stats;
+    // Reference Player Controls for when in menu?
     private Rigidbody2D rb;
-    private Enemy[] enemies; // Array of Enemy script instances
+
+    // Enemy Tracking
+    private Enemy[] enemies; // Array of Enemy script instances (Should this be a list rather than Array?)
     private Transform target; // For finding closest target
-    [SerializeField] private float moveSpeed; // If using scriptable stats, replace moveSpeed
     private Vector2 directionToEnemy;
     private Vector2 localScale;
-
     private float distanceToEnemy;
     private float closestDistance;
 
-    public GameObject sword;
-
+    // Attacking
     public float attackRange;
     private float distanceToPlayer;
 
@@ -32,6 +34,11 @@ public class Player : MonoBehaviour
     }
 
     private void Update()
+    {
+        TargetClosestEnemy();
+    }
+
+    private void TargetClosestEnemy()
     {
         // Find the closest enemy with the "Enemy" script attached
         closestDistance = Mathf.Infinity;
@@ -59,7 +66,7 @@ public class Player : MonoBehaviour
             directionToEnemy = (target.position - transform.position).normalized;
 
             // Move the player towards the target enemy
-            rb.velocity = directionToEnemy * moveSpeed;
+            rb.velocity = directionToEnemy * stats.movementSpeed;
         }
         else
         {
@@ -102,6 +109,7 @@ public class Player : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
+        // Attack range sphere
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange);
     }
