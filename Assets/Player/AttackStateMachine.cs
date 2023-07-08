@@ -48,6 +48,7 @@ public class AttackStateMachine : MonoBehaviour
 
     void SwordAttackState()
     {
-
+        // If in attack range or in range of enemy
+        // 
     }
 }

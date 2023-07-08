@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMove : MonoBehaviour
+public class Player : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Enemy[] enemies; // Array of Enemy script instances
@@ -10,6 +10,14 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private float moveSpeed; // If using scriptable stats, replace moveSpeed
     private Vector2 directionToEnemy;
     private Vector2 localScale;
+
+    private float distanceToEnemy;
+    private float closestDistance;
+
+    public GameObject sword;
+
+    public float attackRange;
+    private float distanceToPlayer;
 
     void Start()
     {
@@ -26,15 +34,20 @@ public class PlayerMove : MonoBehaviour
     private void Update()
     {
         // Find the closest enemy with the "Enemy" script attached
-        float closestDistance = Mathf.Infinity;
+        closestDistance = Mathf.Infinity;
         foreach (Enemy enemy in enemies)
         {
-            float distanceToEnemy = Vector2.Distance(transform.position, enemy.transform.position);
+            distanceToEnemy = Vector2.Distance(transform.position, enemy.transform.position);
             if (distanceToEnemy < closestDistance)
             {
                 closestDistance = distanceToEnemy;
                 target = enemy.transform;
             }
+        }
+
+        if (IsPlayerWithinAttackRange())
+        {
+            PerformAttack();
         }
     }
 
@@ -65,5 +78,28 @@ public class PlayerMove : MonoBehaviour
         {
             transform.localScale = new Vector3(-localScale.x, localScale.y);
         }
+    }
+
+    bool IsPlayerWithinAttackRange()
+    {
+        // When player is near target, this bool will activate
+        distanceToPlayer = Vector2.Distance(transform.position, target.position);
+
+        return distanceToPlayer <= attackRange;
+    }
+
+    void PerformAttack()
+    {
+        // Play attack animation
+
+        // Perform action
+
+        Debug.Log("Attack performed");
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, attackRange);
     }
 }
