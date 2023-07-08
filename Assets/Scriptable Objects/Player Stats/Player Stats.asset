@@ -18,7 +18,7 @@ MonoBehaviour:
   damage: 1
   attackSpeed: 1
   health: 1
-  movementSpeed: 1
+  movementSpeed: 2.5
   maxInventory: 8
   equippedItems:
   - {fileID: 11400000, guid: 9c75f41857925f14998555feb6c0b926, type: 2}

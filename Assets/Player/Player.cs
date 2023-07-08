@@ -1,26 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Player : MonoBehaviour
 {
+    // References
+    [SerializeField] private PlayerStats stats;
+    // Reference Player Controls for when in menu?
     private Rigidbody2D rb;
-    private Enemy[] enemies; // Array of Enemy script instances
+    private NavMeshAgent navMeshAgent;
+
+    // Enemy Tracking
+    private Enemy[] enemies; // Array of Enemy script instances (Should this be a list rather than Array?)
     private Transform target; // For finding closest target
-    [SerializeField] private float moveSpeed; // If using scriptable stats, replace moveSpeed
     private Vector2 directionToEnemy;
     private Vector2 localScale;
-
     private float distanceToEnemy;
     private float closestDistance;
 
-    public GameObject sword;
-
+    // Attacking
     public float attackRange;
     private float distanceToPlayer;
 
     void Start()
     {
+        navMeshAgent = GetComponent<NavMeshAgent>();
         rb = GetComponent<Rigidbody2D>();
         enemies = FindObjectsOfType<Enemy>(); // Find all Enemy script instances in the scene
         localScale = transform.localScale;
@@ -32,6 +37,11 @@ public class Player : MonoBehaviour
     }
 
     private void Update()
+    {
+        TargetClosestEnemy();
+    }
+
+    private void TargetClosestEnemy()
     {
         // Find the closest enemy with the "Enemy" script attached
         closestDistance = Mathf.Infinity;
@@ -55,11 +65,7 @@ public class Player : MonoBehaviour
     {
         if (target != null)
         {
-            // Get the direction towards the target enemy
-            directionToEnemy = (target.position - transform.position).normalized;
-
-            // Move the player towards the target enemy
-            rb.velocity = directionToEnemy * moveSpeed;
+            navMeshAgent.SetDestination(target.position);
         }
         else
         {
@@ -102,6 +108,7 @@ public class Player : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
+        // Attack range sphere
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange);
     }
