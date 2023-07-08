@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Enemy : MonoBehaviour, Death
+public class Enemy : MonoBehaviour
 {
     [SerializeField] Animator animator;
     [SerializeField] Transform player;
@@ -13,7 +13,6 @@ public class Enemy : MonoBehaviour, Death
     [SerializeField] Health health;
     [SerializeField] EnemyCS enemyCS;
     [SerializeField] GameObject spriteHolder;
-    [SerializeField] Animator craftingMaterialAnimator;
 
 
     WeaponSwing weaponSwing;
@@ -82,19 +81,19 @@ public class Enemy : MonoBehaviour, Death
         }
     }
 
-    public void Died()
+    void Die()
     {
-        navMeshAgent.isStopped = true;
-        animator.SetTrigger("Died");
-    }
-
-    public void DisableEnemy()
-    {
-        this.gameObject.SetActive(false);
-    }
-
-    public void PopUpDeathMaterials()
-    {
-        craftingMaterialAnimator.enabled = true;
+        /// <summary>
+        /// This method should be executed when conditions are met
+        /// It not only kills enemy, but also should drop loot as well
+        /// Need to create necessary objects and variables
+        /// </summary>
+        // What does this line of code mean?
+        //for (int  i = 1; i < dropCount; i++)
+        //{
+            //Instantiate(drop, new Vector3(transform.position.x, transform.position.y), Quaternion.identity);
+        //}
+        //parentSpace.spawnPoint = "00000000";
+        //Destroy(transform.parent.gameObject);
     }
 }
