@@ -153,6 +153,7 @@ MonoBehaviour:
   image: {fileID: 1941989820790715486}
   hoverTip: {fileID: 3250575855983612643}
   button: {fileID: 1941989820607596081}
+  craftingSlot: 1
 --- !u!114 &3250575855983612643
 MonoBehaviour:
   m_ObjectHideFlags: 0

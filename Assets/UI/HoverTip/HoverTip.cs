@@ -23,8 +23,6 @@ public class HoverTip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     private void ShowMessage()
     {
-
-        Debug.Log("ShowMessage + " + tipToShow);
         HoverTipManager.OnMouseHover(tipToShow, Input.mousePosition);
     }
 
