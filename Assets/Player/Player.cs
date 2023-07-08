@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Player : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class Player : MonoBehaviour
     [SerializeField] private PlayerStats stats;
     // Reference Player Controls for when in menu?
     private Rigidbody2D rb;
+    private NavMeshAgent navMeshAgent;
 
     // Enemy Tracking
     private Enemy[] enemies; // Array of Enemy script instances (Should this be a list rather than Array?)
@@ -23,6 +25,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        navMeshAgent = GetComponent<NavMeshAgent>();
         rb = GetComponent<Rigidbody2D>();
         enemies = FindObjectsOfType<Enemy>(); // Find all Enemy script instances in the scene
         localScale = transform.localScale;
@@ -62,11 +65,7 @@ public class Player : MonoBehaviour
     {
         if (target != null)
         {
-            // Get the direction towards the target enemy
-            directionToEnemy = (target.position - transform.position).normalized;
-
-            // Move the player towards the target enemy
-            rb.velocity = directionToEnemy * stats.movementSpeed;
+            navMeshAgent.SetDestination(target.position);
         }
         else
         {

@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
     [SerializeField] Animator animator;
-    [SerializeField] GameObject player;
+    [SerializeField] Transform player;
     [SerializeField] Rigidbody2D rb;
+    [SerializeField] NavMeshAgent navMeshAgent;
 
     [SerializeField] EnemyCS enemyCS;
 
@@ -23,38 +25,28 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        distanceToPlayer = Vector3.Distance(transform.position, player.transform.forward);
-
-        Debug.Log(distanceToPlayer);
-
+        distanceToPlayer = Vector3.Distance(player.transform.position, transform.position);
         animator.SetFloat("DistanceToPlayer", distanceToPlayer);
     }
 
-    public void WalkTowardsPlayer()
-    {
-        chasingPlayer= true;
-        StartCoroutine(ChasingPlayer());
-    }
-
-    public void StopWalkingTowardsPlayer()
+    public void StartChasePlayer()
     {
         chasingPlayer = true;
+        StartCoroutine(ChasingPlayer());
+    }
+    public void StopChasePlayer()
+    {
+        chasingPlayer = false;
     }
 
     IEnumerator ChasingPlayer()
     {
-        while(chasingPlayer) 
+        while(chasingPlayer)
         {
-            Debug.Log("waking towards");
-
-            if(distanceToPlayer > enemyCS.attackDistance)
-            {
-                transform.position = Vector2.MoveTowards(transform.position, player.transform.position, enemyCS.chaseSpeed * Time.deltaTime);
-            }
+            navMeshAgent.SetDestination(player.transform.position);
             yield return null;
         }
     }
-
 
     void Die()
     {
