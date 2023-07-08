@@ -103,16 +103,6 @@ public class TombScarabController : MonoBehaviour
         {
             transform.position = Vector2.MoveTowards(transform.position, destination, chaseSpeed);
         }
-
-
-
-        if (state != ScarabState.idle || destination == cleared)
-        {
-            state = ScarabState.idle;
-            animator.Play("idle");
-            destination = new Vector3(transform.position.x + Random.Range(idleDistance * -1, idleDistance + 2), transform.position.y + Random.Range(idleDistance * -1, idleDistance + 2), 0f);
-        }
-
     }
 
     void SetToStop()

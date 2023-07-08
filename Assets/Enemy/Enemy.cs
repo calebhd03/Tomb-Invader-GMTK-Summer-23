@@ -1,19 +1,47 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public static event Action<Enemy> OnEnemyKilled;
+
+    [SerializeField] private float health, maxHealth;
+    [SerializeField] private float moveSpeed;
+    private Rigidbody2D rb;
+    private Transform target;
+    Vector2 moveDir;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        health = maxHealth;
+        target = GameObject.FindObjectOfType<Player>().transform;
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if (target != null)
+        {
+            Vector3 direction = -(target.position - transform.position).normalized;
+            moveDir = direction;
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (target != null)
+        {
+            rb.velocity = new Vector2(moveDir.x, moveDir.y) * moveSpeed;
+        }
+    }
+
+    void TakeDamage(float damageAmount)
+    {
+
     }
 
     void Die()

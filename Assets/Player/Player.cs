@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     [SerializeField] private PlayerStats stats;
     // Reference Player Controls for when in menu?
     private Rigidbody2D rb;
+    private Animator animator;
 
     // Enemy Tracking
     private Enemy[] enemies; // Array of Enemy script instances (Should this be a list rather than Array?)
@@ -21,10 +22,14 @@ public class Player : MonoBehaviour
     public float attackRange;
     private float distanceToPlayer;
 
+    // Health
+    public float currentHealth;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         enemies = FindObjectsOfType<Enemy>(); // Find all Enemy script instances in the scene
+        animator = gameObject.GetComponent<Animator>();
         localScale = transform.localScale;
     }
 
