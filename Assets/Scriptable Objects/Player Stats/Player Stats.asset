@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c1a0e48e757fbd47906b3070902d540, type: 3}
   m_Name: Player Stats
   m_EditorClassIdentifier: 
-  redMaterials: 399
-  purpleMaterials: 394
-  yellowMaterials: 413
-  damage: 10
-  attackSpeed: 10
-  health: 14.4
+  redMaterials: 0
+  purpleMaterials: 0
+  yellowMaterials: 0
+  damage: 1
+  attackSpeed: 1
+  health: 10
   movementSpeed: 10
   maxInventory: 3
   equippedItems: []
