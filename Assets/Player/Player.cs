@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, Death
 {
     // References
     [SerializeField] private PlayerStats stats;
@@ -22,6 +22,9 @@ public class Player : MonoBehaviour
     // Attacking
     public float attackRange;
     private float distanceToPlayer;
+
+    // Sword
+    public GameObject sword;
 
     void Start()
     {
@@ -100,7 +103,24 @@ public class Player : MonoBehaviour
 
         // Perform action
 
-        Debug.Log("Attack performed");
+        
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.CompareTag("Enemy"))
+        {
+            // Check if sword collides with enemy
+            Health enemyHealth = col.GetComponent<Health>();
+
+            if (enemyHealth != null)
+            {
+                // Apply damage to enemy
+                enemyHealth.TakeDamage(5);
+            
+                // Instantiate sword attack effect at enemy's position
+            }
+        }
     }
 
     // Can the attack state machine be run within this script?
@@ -111,5 +131,10 @@ public class Player : MonoBehaviour
         // Attack range sphere
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange);
+    }
+
+    public void Died()
+    {
+        
     }
 }

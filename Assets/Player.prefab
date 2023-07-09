@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 455227595590298106}
   - component: {fileID: 1054553482596496182}
   - component: {fileID: 1054553482596496329}
+  - component: {fileID: 7784969486927951182}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -109,6 +110,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: ae9bc83ef4d71e049a0591b7f985e29f, type: 2}
   attackRange: 1.5
+  sword: {fileID: 1054553482699469824}
+--- !u!114 &7784969486927951182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1054553482596496181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b670861827350134f9ff7accfc8a9c7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToDie: {fileID: 1054553482596496181}
 --- !u!1 &1054553482699469824
 GameObject:
   m_ObjectHideFlags: 0
@@ -462,7 +477,7 @@ GameObject:
   - component: {fileID: 5336935694277574523}
   - component: {fileID: 33423610174341714}
   m_Layer: 0
-  m_Name: Weapon
+  m_Name: Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
