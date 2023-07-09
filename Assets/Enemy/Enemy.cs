@@ -14,17 +14,15 @@ public class Enemy : MonoBehaviour, Death
     public EnemyCS enemyCS;
     [SerializeField] GameObject spriteHolder;
     [SerializeField] Animator craftingMaterialAnimator;
+    [SerializeField] Attack attackScript;
 
+    public float distanceToPlayer = float.MaxValue;
 
-    WeaponSwing weaponSwing;
     bool chasingPlayer = false;
-    float distanceToPlayer = float.MaxValue;
-    bool attackReady = true;
 
     // Start is called before the first frame update
     void Start()
     {
-        FindWeaponSwing();
         FillOutValues();
         health.SetMaxHealth(enemyCS.maxHealth);
     }
@@ -42,29 +40,6 @@ public class Enemy : MonoBehaviour, Death
         bool chasePlayer = distanceToPlayer <= enemyCS.chaseDistance;
         animator.SetBool("ChasePlayer", chasePlayer);
         animator.SetFloat("DistanceToPlayer", distanceToPlayer);
-    }
-
-    public void FindWeaponSwing()
-    {
-        weaponSwing = WeaponHolder.GetComponentInChildren<WeaponSwing>();
-    }
-
-    public void WeaponSwong()
-    {
-        StartCoroutine(AttackCooldown());
-        weaponSwing.Swing(enemyCS.damage);
-    }
-
-    public void StopWeaponSwing()
-    {
-        weaponSwing.StopSwing();
-    }
-
-    IEnumerator AttackCooldown()
-    {
-        attackReady = false;
-        yield return new WaitForSeconds(enemyCS.attackSpeed);
-        attackReady = true;
     }
 
     public void StartChasePlayer()
@@ -102,10 +77,15 @@ public class Enemy : MonoBehaviour, Death
             LookAtPlayer();
             navMeshAgent.SetDestination(player.transform.position);
 
-            bool canAttack = false;
-            if(distanceToPlayer <= enemyCS.attackDistance + .3 && attackReady) 
-                canAttack = true;
-            animator.SetBool("CanAttack", canAttack);
+
+            if(distanceToPlayer <= enemyCS.attackDistance + .3)
+            {
+                attackScript = GetComponent<Attack>();
+                if(attackScript != null)
+                {
+                        attackScript.Attack();
+                }
+            }
 
             yield return null;
         }
