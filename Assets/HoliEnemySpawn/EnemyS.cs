@@ -15,6 +15,8 @@ public class EnemyS : MonoBehaviour
     public GameObject boneWarrior;
     public GameObject sphinxGolem;
 
+    public Transform P;
+
 
     void Start()
     {
@@ -54,9 +56,9 @@ public class EnemyS : MonoBehaviour
         while (enemys.Count > 0)
         {
             int randomIndex = Random.Range(0, enemys.Count);
-            Vector3 randonSpawnPosition = new Vector3(Random.Range(-10, 11), Random.Range(-10, 11), 1);
-
-            Instantiate(enemys[randomIndex], randonSpawnPosition, Quaternion.identity);
+            Vector3 randonSpawnPosition = new Vector3(Random.Range(-10, 11), Random.Range(-10, 11), 0);
+            GameObject e = Instantiate(enemys[randomIndex], randonSpawnPosition, Quaternion.identity);
+            e.GetComponent<Enemy>().player = P;
             enemys.RemoveAt(randomIndex);
             yield return new WaitForSeconds(2.0f);
         }
