@@ -970,6 +970,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8700636117511281837}
     m_Modifications:
+    - target: {fileID: 5144936334341208188, guid: 82e67ab14db23c649950cb9d24370f93, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144936335043592093, guid: 82e67ab14db23c649950cb9d24370f93, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 11400000, guid: 2b9c99debc7681344ab50468e4c08673, type: 2}
     - target: {fileID: 5396150738411940854, guid: 82e67ab14db23c649950cb9d24370f93, type: 3}
       propertyPath: m_Name
       value: Crafting Menu
