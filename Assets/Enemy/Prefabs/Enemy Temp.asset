@@ -12,17 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b044ac415fc924e44a02a213b8672382, type: 3}
   m_Name: Enemy Temp
   m_EditorClassIdentifier: 
-  _value: 0
-  chaseDistance: 0
-  chaseSpeed: 0
-  damage: 0
-  maxHealth: 0
-  monsterBloodGain: 0
-  arcaneSandGain: 0
-  theoriteGain: 0
-  attackDistance: 0
-  attackSpeed: 0
-  arcHeight: 0
-  startTime: 0
-  idleSpeed: 0
-  idleDistance: 0
+  maxHealth: 1
+  damage: 1
+  monsterBloodGain: 2
+  arcaneSandGain: 2
+  theoriteGain: 2
+  chaseDistance: 5
+  chaseSpeed: 1
+  attackSpeed: 1
+  attackDistance: 1.3

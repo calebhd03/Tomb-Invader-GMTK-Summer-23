@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour, Death
     [SerializeField] NavMeshAgent navMeshAgent;
     [SerializeField] GameObject WeaponHolder;
     [SerializeField] Health health;
-    [SerializeField] EnemyCS enemyCS;
+    public EnemyCS enemyCS;
     [SerializeField] GameObject spriteHolder;
     [SerializeField] Animator craftingMaterialAnimator;
 
@@ -19,23 +19,28 @@ public class Enemy : MonoBehaviour, Death
     WeaponSwing weaponSwing;
     bool chasingPlayer = false;
     float distanceToPlayer = float.MaxValue;
+    bool attackReady = true;
 
     // Start is called before the first frame update
     void Start()
     {
         FindWeaponSwing();
-
+        FillOutValues();
         health.SetMaxHealth(enemyCS.maxHealth);
     }
 
     public void FillOutValues()
     {
+        navMeshAgent.speed = enemyCS.chaseSpeed;
+        navMeshAgent.stoppingDistance = enemyCS.attackDistance;
     }
 
     // Update is called once per frame
     void Update()
     {
         distanceToPlayer = Vector3.Distance(player.transform.position, transform.position);
+        bool chasePlayer = distanceToPlayer <= enemyCS.chaseDistance;
+        animator.SetBool("ChasePlayer", chasePlayer);
         animator.SetFloat("DistanceToPlayer", distanceToPlayer);
     }
 
@@ -46,7 +51,20 @@ public class Enemy : MonoBehaviour, Death
 
     public void WeaponSwong()
     {
+        StartCoroutine(AttackCooldown());
         weaponSwing.Swing(enemyCS.damage);
+    }
+
+    public void StopWeaponSwing()
+    {
+        weaponSwing.StopSwing();
+    }
+
+    IEnumerator AttackCooldown()
+    {
+        attackReady = false;
+        yield return new WaitForSeconds(enemyCS.attackSpeed);
+        attackReady = true;
     }
 
     public void StartChasePlayer()
@@ -83,6 +101,12 @@ public class Enemy : MonoBehaviour, Death
         {
             LookAtPlayer();
             navMeshAgent.SetDestination(player.transform.position);
+
+            bool canAttack = false;
+            if(distanceToPlayer <= enemyCS.attackDistance + .3 && attackReady) 
+                canAttack = true;
+            animator.SetBool("CanAttack", canAttack);
+
             yield return null;
         }
     }
@@ -102,4 +126,9 @@ public class Enemy : MonoBehaviour, Death
     {
         craftingMaterialAnimator.enabled = true;
     }
+}
+
+public interface Attack
+{   
+    public void Attack();
 }

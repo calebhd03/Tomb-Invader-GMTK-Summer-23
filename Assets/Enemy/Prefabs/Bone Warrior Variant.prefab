@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3889248993036457186, guid: 48348d1e514f16249bd8081fafae9908, type: 3}
       propertyPath: m_Name
-      value: Enemy Tomb Scarab
+      value: Bone Warrior
       objectReference: {fileID: 0}
     - target: {fileID: 3889248993036457187, guid: 48348d1e514f16249bd8081fafae9908, type: 3}
       propertyPath: m_RootOrder

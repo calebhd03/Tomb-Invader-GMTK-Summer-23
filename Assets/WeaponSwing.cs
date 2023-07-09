@@ -3,13 +3,18 @@ using UnityEngine;
 
 public class WeaponSwing : MonoBehaviour
 {
-    bool notHitYet = true;
+    bool notHitYet = false;
     public float damage = 1f;
 
     public void Swing(float d)
     {
         this.damage= d;
         notHitYet = true;
+    }
+
+    public void StopSwing()
+    {
+        notHitYet= false;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -21,6 +26,7 @@ public class WeaponSwing : MonoBehaviour
             Health health = other.GetComponent<Health>();
             if(health != null)
             {
+                Debug.Log("Damage Player");
                 health.TakeDamage(damage);
                 notHitYet= false;
                 

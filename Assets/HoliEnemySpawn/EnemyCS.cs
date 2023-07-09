@@ -18,4 +18,5 @@ public class EnemyCS : ScriptableObject
     public float chaseSpeed;
 
     public float attackSpeed;
+    public float attackDistance;
 }
