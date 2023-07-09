@@ -10,15 +10,16 @@ public class PlayerStatsInfo : MonoBehaviour
     {
         //set modifier text
         //positive modifier
-        if(modifier >0)
+        if(modifier >1)
         {
-            modifierText.text = modifier.ToString() + "%";
+            modifierText.text = (modifier * 1).ToString() + "%";
             modifierText.color = Color.green;
         }
         //negative modifier
-        else if(modifier < 0)
+        else if(modifier < 1)
         {
-            modifierText.text = modifier.ToString() + "%";
+
+            modifierText.text = (modifier * 1).ToString() + "%";
             modifierText.color = Color.red;
         }
         else
