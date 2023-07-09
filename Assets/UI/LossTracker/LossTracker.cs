@@ -22,7 +22,7 @@ public class LossTracker : MonoBehaviour
     {
         for(int i=0; i<waveSpawnerSO.WavesTried; i++)
         {
-            if(waveSpawnerSO.WavesTried >5)
+            if(waveSpawnerSO.WavesTried >3)
             {
                 LossGame();
                 return;
