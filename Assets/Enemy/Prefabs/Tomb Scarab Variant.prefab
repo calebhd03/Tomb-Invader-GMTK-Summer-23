@@ -259,6 +259,7 @@ MonoBehaviour:
   enemyCS: {fileID: 11400000, guid: d851811047151454dadb299ef40421a2, type: 2}
   spriteHolder: {fileID: 7168116626253473179}
   craftingMaterialAnimator: {fileID: 3939901317269440989}
+  distanceToPlayer: 3.4028235e+38
 --- !u!114 &1474737464612809237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -366,6 +367,22 @@ PrefabInstance:
     - target: {fileID: 5493054106432138660, guid: 22c54b695feafa548a9b2465219d8375, type: 3}
       propertyPath: m_FlipX
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5493054106432138660, guid: 22c54b695feafa548a9b2465219d8375, type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5493054106432138660, guid: 22c54b695feafa548a9b2465219d8375, type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5493054106432138660, guid: 22c54b695feafa548a9b2465219d8375, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 205940bce327efd489de929f01bfd689, type: 3}
+    - target: {fileID: 5493054106432138660, guid: 22c54b695feafa548a9b2465219d8375, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5493054106432138661, guid: 22c54b695feafa548a9b2465219d8375, type: 3}
       propertyPath: m_RootOrder
