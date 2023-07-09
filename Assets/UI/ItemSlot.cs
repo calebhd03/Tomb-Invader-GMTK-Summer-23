@@ -131,7 +131,7 @@ public class ItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         }
         else
         {
-            playerStats.movementSpeed *= (Mathf.Abs(item.movementSpeedModifier - 1) + 1) * 1
+            playerStats.movementSpeed *= (Mathf.Abs(item.movementSpeedModifier - 1) + 1) * 1;
         }
 
         playerStats.equippedItems.Remove(item);
