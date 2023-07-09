@@ -25,6 +25,7 @@ public class Player : MonoBehaviour, Death
 
     // Sword
     public GameObject sword;
+    private Vector2 weaponLocalScale;
 
     void Start()
     {
@@ -32,6 +33,7 @@ public class Player : MonoBehaviour, Death
         rb = GetComponent<Rigidbody2D>();
         enemies = FindObjectsOfType<Enemy>(); // Find all Enemy script instances in the scene
         localScale = transform.localScale;
+        weaponLocalScale = sword.transform.localScale;
     }
 
     private void FixedUpdate()
@@ -55,12 +57,20 @@ public class Player : MonoBehaviour, Death
             {
                 closestDistance = distanceToEnemy;
                 target = enemy.transform;
-            }
-        }
 
-        if (IsPlayerWithinAttackRange())
-        {
-            PerformAttack();
+                // Face towards enemy (Weapon flips, but is inconsistent)
+                Vector2 directionToEnemy = enemy.transform.position - transform.position;
+                if (directionToEnemy.x > 0)
+                {
+                    transform.localScale = new Vector2(Mathf.Abs(localScale.x), localScale.y);
+                    sword.transform.localScale = new Vector2(Mathf.Abs(weaponLocalScale.x), weaponLocalScale.y);
+                }
+                else if (directionToEnemy.x < 0)
+                {
+                    transform.localScale = new Vector2(-Mathf.Abs(localScale.x), localScale.y);
+                    sword.transform.localScale = new Vector2(-Mathf.Abs(weaponLocalScale.x), weaponLocalScale.y);
+                }
+            }
         }
     }
 
@@ -135,6 +145,6 @@ public class Player : MonoBehaviour, Death
 
     public void Died()
     {
-        
+        // Handle player death
     }
 }
