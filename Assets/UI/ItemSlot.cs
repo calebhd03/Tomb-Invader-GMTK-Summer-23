@@ -84,6 +84,12 @@ public class ItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         playerStats.redMaterials -= item.redCost;
         playerStats.purpleMaterials -= item.purpleCost;
         playerStats.yellowMaterials -= item.yellowCost;
+
+        playerStats.damage *= item.damageModifier;
+        playerStats.attackSpeed *= item.attackSpeedModifier;
+        playerStats.health *= item.healthModifier;
+        playerStats.movementSpeed *= item.movementSpeedModifier;
+
     }
 
     public void RefundItem()
