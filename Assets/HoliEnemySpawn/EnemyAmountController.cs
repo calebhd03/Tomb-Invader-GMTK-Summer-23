@@ -11,10 +11,8 @@ public class EnemyAmountController : MonoBehaviour
 
     void Start()
     {
-        if(wSO.WavesTried == 0)
-        {
-            GenerateWaveSpawn();
-        }
+ 
+        GenerateWaveSpawn();
 
         NextEnemyUI.FillList(wSO);
     }
