@@ -297,42 +297,6 @@ PrefabInstance:
       propertyPath: P
       value: 
       objectReference: {fileID: 1261843837}
-    - target: {fileID: 8006874879770432945, guid: 6f89af583cbab1d4b83646c3f0c54883, type: 3}
-      propertyPath: sapperAsp
-      value: 
-      objectReference: {fileID: 3889248993036457186, guid: 48348d1e514f16249bd8081fafae9908, type: 3}
-    - target: {fileID: 8006874879770432945, guid: 6f89af583cbab1d4b83646c3f0c54883, type: 3}
-      propertyPath: hauntedJar
-      value: 
-      objectReference: {fileID: 3889248993036457186, guid: 48348d1e514f16249bd8081fafae9908, type: 3}
-    - target: {fileID: 8006874879770432945, guid: 6f89af583cbab1d4b83646c3f0c54883, type: 3}
-      propertyPath: SpawnNumber
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8006874879770432945, guid: 6f89af583cbab1d4b83646c3f0c54883, type: 3}
-      propertyPath: boneWarrior
-      value: 
-      objectReference: {fileID: 3889248993036457186, guid: 48348d1e514f16249bd8081fafae9908, type: 3}
-    - target: {fileID: 8006874879770432945, guid: 6f89af583cbab1d4b83646c3f0c54883, type: 3}
-      propertyPath: spawnAmount
-      value: 
-      objectReference: {fileID: 11400000, guid: 594e87c6cb5391949a37bb6c2795a780, type: 2}
-    - target: {fileID: 8006874879770432945, guid: 6f89af583cbab1d4b83646c3f0c54883, type: 3}
-      propertyPath: sphinxGolem
-      value: 
-      objectReference: {fileID: 3889248993036457186, guid: 48348d1e514f16249bd8081fafae9908, type: 3}
-    - target: {fileID: 8006874879770432945, guid: 6f89af583cbab1d4b83646c3f0c54883, type: 3}
-      propertyPath: tombScarabs
-      value: 
-      objectReference: {fileID: 3889248993036457186, guid: 48348d1e514f16249bd8081fafae9908, type: 3}
-    - target: {fileID: 8006874879770432945, guid: 6f89af583cbab1d4b83646c3f0c54883, type: 3}
-      propertyPath: enemys.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8006874879770432945, guid: 6f89af583cbab1d4b83646c3f0c54883, type: 3}
-      propertyPath: enemys.Array.data[0]
-      value: 
-      objectReference: {fileID: 3889248993036457186, guid: 48348d1e514f16249bd8081fafae9908, type: 3}
     - target: {fileID: 8006874879770432950, guid: 6f89af583cbab1d4b83646c3f0c54883, type: 3}
       propertyPath: m_Name
       value: EnemySpawner

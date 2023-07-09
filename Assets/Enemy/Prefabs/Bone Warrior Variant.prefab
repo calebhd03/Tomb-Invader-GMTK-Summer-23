@@ -282,7 +282,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6208337962031541926}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5339999, y: 0, z: 0}
+  m_LocalPosition: {x: 0.428, y: 0.211, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -345,6 +345,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sword Place Holder
       objectReference: {fileID: 0}
+    - target: {fileID: 6613383734396476065, guid: 891c5ffafd0e78b4db688dc96eaf54ea, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 6613383734396476065, guid: 891c5ffafd0e78b4db688dc96eaf54ea, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 8977022804784160446, guid: 891c5ffafd0e78b4db688dc96eaf54ea, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 98a0d065631e9594fb78725ef87d319e, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 891c5ffafd0e78b4db688dc96eaf54ea, type: 3}
 --- !u!4 &7902129117365210342 stripped
@@ -434,6 +446,10 @@ PrefabInstance:
       propertyPath: m_FlipX
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5493054106432138660, guid: 22c54b695feafa548a9b2465219d8375, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5b0182bd358872448a7fc15be5e186df, type: 3}
     - target: {fileID: 5493054106432138661, guid: 22c54b695feafa548a9b2465219d8375, type: 3}
       propertyPath: m_RootOrder
       value: 0
