@@ -160,7 +160,7 @@ MonoBehaviour:
   navMeshAgent: {fileID: 1700369661711787338}
   WeaponHolder: {fileID: 6208337962031541926}
   health: {fileID: 5364747864975875965}
-  enemyCS: {fileID: 11400000, guid: d851811047151454dadb299ef40421a2, type: 2}
+  enemyCS: {fileID: 11400000, guid: e2ef086340aabc94387d17fa16c39e16, type: 2}
   spriteHolder: {fileID: 4431115682837434611}
   craftingMaterialAnimator: {fileID: 7541681598432328885}
   distanceToPlayer: 3.4028235e+38
@@ -189,7 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cc438598a8ef6946a1b4f0d969e8d40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyCS: {fileID: 11400000, guid: d851811047151454dadb299ef40421a2, type: 2}
+  enemyCS: {fileID: 11400000, guid: e2ef086340aabc94387d17fa16c39e16, type: 2}
   WeaponHolder: {fileID: 6208337962031541926}
   animator: {fileID: 4274740627622228818}
   enemy: {fileID: 2976082022203793894}
