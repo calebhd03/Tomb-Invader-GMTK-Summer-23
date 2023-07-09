@@ -16,10 +16,11 @@ public class HauntedJarAttack : MonoBehaviour, Attack
 
     private void Start()
     {
-        FindWeaponSwing();
+        FindWeaponSwing(); AttackCooldown();
     }
     public void WeaponSwong()
     {
+        if (!attackReady) return;
 
         int nextBulletDirection = Random.Range(0, 121);
         for(int i=0; i<3; i++)
@@ -37,10 +38,11 @@ public class HauntedJarAttack : MonoBehaviour, Attack
         }
 
         StartCoroutine(AttackCooldown());
+        animator.SetBool("CanAttack", false);
     }
     public void StopWeaponSwing()
     {
-        animator.SetBool("CanAttack", false);
+        //animator.SetBool("CanAttack", false);
     }
     public void FindWeaponSwing()
     {
@@ -52,9 +54,6 @@ public class HauntedJarAttack : MonoBehaviour, Attack
     }
     public void Update()
     {
-        if (attackReady)
-            animator.SetBool("CanAttack", true);
-        
     }
 
     IEnumerator AttackCooldown()

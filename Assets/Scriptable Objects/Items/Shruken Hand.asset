@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Shruken Hand
   sprite: {fileID: 21300000, guid: f016348d3b1cc514d802239b14c41576, type: 3}
-  description: Damage Increase
+  description: 'Damage Increase: 15 Theorite'
   redCost: 0
   purpleCost: 15
   yellowCost: 0

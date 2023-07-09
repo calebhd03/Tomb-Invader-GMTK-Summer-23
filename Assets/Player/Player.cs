@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour, Death
 {
     // References
-    [SerializeField] private PlayerStats stats;
+    [SerializeField] public PlayerStats stats;
     [SerializeField] WaveSpawnerScriptableObject wSO;
     [SerializeField] GameObject winText;
     [SerializeField] EnemyS enemyS;

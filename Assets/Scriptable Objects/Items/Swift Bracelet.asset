@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Swift Bracelet
   sprite: {fileID: 21300000, guid: 760561f21c71518499f9679b69efbb02, type: 3}
-  description: Increases attack rate by 50%
+  description: 'Increases attack rate by 50%: 200 Monster Blood, 200 Arcane Sand'
   redCost: 200
   purpleCost: 0
   yellowCost: 200

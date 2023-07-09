@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
+using UnityEditor.Timeline.Actions;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -19,6 +20,7 @@ public class Enemy : MonoBehaviour, Death
     public float distanceToPlayer = float.MaxValue;
 
     bool chasingPlayer = false;
+    bool died = false;
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +39,8 @@ public class Enemy : MonoBehaviour, Death
     // Update is called once per frame
     void Update()
     {
+        if (died) return;
+
         distanceToPlayer = Vector3.Distance(player.transform.position, transform.position);
         bool chasePlayer = distanceToPlayer <= enemyCS.chaseDistance;
         animator.SetBool("ChasePlayer", chasePlayer);
@@ -45,6 +49,7 @@ public class Enemy : MonoBehaviour, Death
 
     public void StartChasePlayer()
     {
+        if (died) return;
         chasingPlayer = true;
         navMeshAgent.isStopped = false;
         StartCoroutine(ChasingPlayer());
@@ -57,6 +62,7 @@ public class Enemy : MonoBehaviour, Death
 
     public void LookAtPlayer()
     {
+        if (died) return;
         Vector3 oldScale = spriteHolder.transform.localScale;
         if(player.transform.position.x < this.transform.position.x)
         {
@@ -86,6 +92,7 @@ public class Enemy : MonoBehaviour, Death
 
     public bool CheckAttack()
     {
+        if (died) return false;
         if (distanceToPlayer <= enemyCS.attackDistance + .3)
         {
             attackScript = GetComponent<Attack>();
@@ -100,10 +107,13 @@ public class Enemy : MonoBehaviour, Death
 
     public void Died()
     {
+
+        GetComponent<Collider2D>().enabled= false;
+        died = true;
+
         Player.EnemyKilled(this.gameObject);
         navMeshAgent.isStopped = true;
         animator.SetTrigger("Died");
-        DisableEnemy();
     }
 
     public void DisableEnemy()

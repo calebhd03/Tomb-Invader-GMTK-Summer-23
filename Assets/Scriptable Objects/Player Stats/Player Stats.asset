@@ -18,6 +18,6 @@ MonoBehaviour:
   damage: 1
   attackSpeed: 1
   health: 10
-  movementSpeed: 10
+  movementSpeed: 2
   maxInventory: 3
   equippedItems: []

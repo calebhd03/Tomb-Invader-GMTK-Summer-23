@@ -10,8 +10,9 @@ public class PopUpMaterial : MonoBehaviour
     [SerializeField] TextMeshProUGUI theoriteText;
 
     [SerializeField] PlayerStats playerStats;
+    [SerializeField] EnemyCS enemyCS;
 
-    public void FillPopUpMaterial(EnemyCS enemyCS)
+    public void Awake()
     {
         monsterBloodText.text = enemyCS.monsterBloodGain.ToString();
         arcaneSandText.text = enemyCS.arcaneSandGain.ToString();

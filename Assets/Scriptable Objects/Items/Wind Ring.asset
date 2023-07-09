@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Wind Ring
   sprite: {fileID: 21300000, guid: 127434f5cc66c064f91bb39f0209fb1b, type: 3}
-  description: Increases attack speed and attack range
+  description: 'Increases attack speed and attack range: 150 Monster Blood, 150 Arcane
+    Sand'
   redCost: 150
   purpleCost: 10
   yellowCost: 150

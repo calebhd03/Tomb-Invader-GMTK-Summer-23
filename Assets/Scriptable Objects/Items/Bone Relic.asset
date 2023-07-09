@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Bone Relic
   sprite: {fileID: 21300000, guid: 616254175f2509f4b88500466280aef4, type: 3}
-  description: Increased Health
+  description: 'Increased Health: 300 Arcane Sand'
   redCost: 0
   purpleCost: 0
   yellowCost: 300

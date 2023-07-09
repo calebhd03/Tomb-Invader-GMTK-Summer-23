@@ -20,13 +20,13 @@ public class LossTracker : MonoBehaviour
 
     public void FillOutLossCounters()
     {
+        if(waveSpawnerSO.WavesTried >3)
+        {
+            LossGame();
+            return;
+        }
         for(int i=0; i<waveSpawnerSO.WavesTried; i++)
         {
-            if(waveSpawnerSO.WavesTried >3)
-            {
-                LossGame();
-                return;
-            }
             TextMeshProUGUI text = counters[i];
 
             text.text = "X";

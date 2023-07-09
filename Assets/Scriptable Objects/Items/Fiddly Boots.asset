@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Fiddly Boots
   sprite: {fileID: 21300000, guid: 7ba674b03af921d4a98afe22a8188bef, type: 3}
-  description: Quicker movement Speed
+  description: 'Quicker movement Speed: 350 Monster Blood'
   redCost: 350
   purpleCost: 0
   yellowCost: 0

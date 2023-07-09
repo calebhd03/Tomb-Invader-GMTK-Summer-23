@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Speed Bracer
   sprite: {fileID: 21300000, guid: cf9f798f550fc474eac049c9e46551fb, type: 3}
-  description: Increases attack speed and movement speed
+  description: 'Increases attack speed and movement speed: 120 Monster Blood, 60
+    Arcane Sand'
   redCost: 120
   purpleCost: 0
   yellowCost: 60

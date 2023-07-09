@@ -18,11 +18,6 @@ public class Bullet : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, direction * 10f, speed * Time.deltaTime);
     }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawSphere(direction * 10f, 3f);
-    }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.CompareTag("Player")) return;
