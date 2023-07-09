@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4f0c4c2d1ee40874191ff92520021e4d, type: 3}
-  m_Name: Item Axe
+  m_Name: Shruken Hand
   m_EditorClassIdentifier: 
-  name: Axe
-  sprite: {fileID: 21300000, guid: 35bcc036773da96438e62524b3641338, type: 3}
-  description: Axe chop
-  redCost: 1
+  name: Shruken Hand
+  sprite: {fileID: 21300000, guid: 4d590527fcca81d498f375d451f5a26a, type: 3}
+  description: Normal Slash
+  redCost: 3
   purpleCost: 3
   yellowCost: 1
-  damageModifier: 1
-  healthModifier: 0
-  attackSpeedModifier: -0.1
-  movementSpeedModifier: 0
+  damageModifier: 1.8
+  healthModifier: 1
+  attackSpeedModifier: 1
+  movementSpeedModifier: 1
