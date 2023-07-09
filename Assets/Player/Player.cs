@@ -10,6 +10,7 @@ public class Player : MonoBehaviour, Death
     // References
     [SerializeField] private PlayerStats stats;
     [SerializeField] WaveSpawnerScriptableObject wSO;
+    [SerializeField] GameObject winText;
     // Reference Player Controls for when in menu?
     private Rigidbody2D rb;
     private NavMeshAgent navMeshAgent;
@@ -150,11 +151,24 @@ public class Player : MonoBehaviour, Death
     {
         Debug.Log("Remove enemy");
         enemies.Remove(e);
+
+        //no more enemies to kill won the level
+        if(enemies.Count <= 0 )
+        {
+            WonLevel();
+            return;
+        }
     }
     public void AddEnemyToList(GameObject e)
     {
         Debug.Log("Add enemy");
         enemies.Add(e);
+    }
+
+    public void WonLevel()
+    {
+        winText.SetActive(true);
+        Time.timeScale = 0;
     }
 
     private void OnEnable()
