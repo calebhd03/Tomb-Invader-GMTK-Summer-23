@@ -49,6 +49,7 @@ public class Health: MonoBehaviour
 
     public void Died()
     {
+        diedSound.Play();
         objectToDie.GetComponent<Death>().Died();
         Debug.Log(this.gameObject.name + " Died");
     }
