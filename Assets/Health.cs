@@ -6,6 +6,8 @@ public class Health: MonoBehaviour
 {
     [SerializeField] GameObject objectToDie;
     [SerializeField] private float currentHealth;
+    [SerializeField] AudioSource takeDamageSound;
+    [SerializeField] AudioSource diedSound;
 
     private float maxHealth;
 
@@ -40,11 +42,17 @@ public class Health: MonoBehaviour
             Died();
         }
 
+        takeDamageSound.Play();
+
         return this.currentHealth;
     }
 
     public void Died()
     {
+        if(diedSound!= null)
+        {
+            diedSound.Play();
+        }
         objectToDie.GetComponent<Death>().Died();
         Debug.Log(this.gameObject.name + " Died");
     }

@@ -12,6 +12,7 @@ public class Player : MonoBehaviour, Death
     [SerializeField] WaveSpawnerScriptableObject wSO;
     [SerializeField] GameObject winText;
     [SerializeField] EnemyS enemyS;
+    [SerializeField] AudioSource attackSound;
     // Reference Player Controls for when in menu?
     private Rigidbody2D rb;
     private NavMeshAgent navMeshAgent;
@@ -116,6 +117,7 @@ public class Player : MonoBehaviour, Death
 
     public void Swing()
     {
+        attackSound.Play();
         sword.GetComponent<SwordController>().Swing();
     }
     public void StopSwing()
