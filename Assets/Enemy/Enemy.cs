@@ -23,6 +23,7 @@ public class Enemy : MonoBehaviour, Death
     // Start is called before the first frame update
     void Start()
     {
+        Player.EnemyAdded(this.gameObject);
         FillOutValues();
         health.SetMaxHealth(enemyCS.maxHealth);
     }
@@ -99,6 +100,7 @@ public class Enemy : MonoBehaviour, Death
 
     public void Died()
     {
+        Player.EnemyKilled(this.gameObject);
         navMeshAgent.isStopped = true;
         animator.SetTrigger("Died");
         DisableEnemy();

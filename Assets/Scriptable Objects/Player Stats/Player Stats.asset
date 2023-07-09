@@ -17,7 +17,7 @@ MonoBehaviour:
   yellowMaterials: 42
   damage: 1
   attackSpeed: 1
-  health: 1
+  health: 20
   movementSpeed: 2.5
   maxInventory: 8
   equippedItems:
