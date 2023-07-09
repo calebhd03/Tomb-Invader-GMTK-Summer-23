@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b044ac415fc924e44a02a213b8672382, type: 3}
   m_Name: Enemy Haunted Jar Data
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 5
   damage: 1
-  monsterBloodGain: 40
-  arcaneSandGain: 0
+  monsterBloodGain: 0
+  arcaneSandGain: 45
   theoriteGain: 0
   chaseDistance: 1000
   chaseSpeed: 2

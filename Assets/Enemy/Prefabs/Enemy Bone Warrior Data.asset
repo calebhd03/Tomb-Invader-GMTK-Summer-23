@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b044ac415fc924e44a02a213b8672382, type: 3}
   m_Name: Enemy Bone Warrior Data
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 3
   damage: 2
   monsterBloodGain: 0
   arcaneSandGain: 0
-  theoriteGain: 40
+  theoriteGain: 5
   chaseDistance: 6
   chaseSpeed: 1
   attackSpeed: 3

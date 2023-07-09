@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 1
   damage: 0
-  monsterBloodGain: 40
+  monsterBloodGain: 65
   arcaneSandGain: 0
   theoriteGain: 0
   chaseDistance: 5
