@@ -44,7 +44,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34a37593345eda84cb30864633813f6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnAmount: {fileID: 11400000, guid: 657f92c787108884b9d3ee0d258644d5, type: 2}
+  spawnAmount: {fileID: 11400000, guid: 594e87c6cb5391949a37bb6c2795a780, type: 2}
   SpawnNumber: 0
-  enemys:
-  - {fileID: 0}
+  enemys: []
+  tombScarabs: {fileID: 8595422252952638592, guid: 4e45b09e698413141b452fc1d00df165, type: 3}
+  sapperAsp: {fileID: 3889248993036457186, guid: 48348d1e514f16249bd8081fafae9908, type: 3}
+  hauntedJar: {fileID: 7971606881422886132, guid: 7fcaa7cc18059c748a214628a00b9755, type: 3}
+  boneWarrior: {fileID: 2976082022203793896, guid: 27de6c5550777a74891a254153786315, type: 3}
+  sphinxGolem: {fileID: 3889248993036457186, guid: 48348d1e514f16249bd8081fafae9908, type: 3}
+  P: {fileID: 0}

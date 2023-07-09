@@ -36,10 +36,6 @@ public class EnemyS : MonoBehaviour
         {
             enemys.Add(tombScarabs);
         }
-        for (int i = 0; i < spawnAmount.sapperAsp; i++)
-        {
-            enemys.Add(sapperAsp);
-        }
         for (int i = 0; i < spawnAmount.hauntedJar; i++)
         {
             enemys.Add(hauntedJar);
@@ -47,10 +43,6 @@ public class EnemyS : MonoBehaviour
         for (int i = 0; i < spawnAmount.boneWarrior; i++)
         {
             enemys.Add(boneWarrior);
-        }
-        for (int i = 0; i < spawnAmount.sphinxGolem; i++)
-        {
-            enemys.Add(sphinxGolem);
         }
 
         while (enemys.Count > 0)
