@@ -54,7 +54,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.031326592, y: -0.004475236}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -65,7 +65,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.4027718, y: 1.8502965}
   m_EdgeRadius: 0
 --- !u!195 &1700369661711787338
 NavMeshAgent:
@@ -177,6 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToDie: {fileID: 2976082022203793896}
+  currentHealth: 0
 --- !u!114 &2571665819094839196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -346,12 +347,32 @@ PrefabInstance:
       value: Sword Place Holder
       objectReference: {fileID: 0}
     - target: {fileID: 6613383734396476065, guid: 891c5ffafd0e78b4db688dc96eaf54ea, type: 3}
+      propertyPath: m_Size.x
+      value: 1.9586707
+      objectReference: {fileID: 0}
+    - target: {fileID: 6613383734396476065, guid: 891c5ffafd0e78b4db688dc96eaf54ea, type: 3}
+      propertyPath: m_Size.y
+      value: 2.5622163
+      objectReference: {fileID: 0}
+    - target: {fileID: 6613383734396476065, guid: 891c5ffafd0e78b4db688dc96eaf54ea, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.37433535
+      objectReference: {fileID: 0}
+    - target: {fileID: 6613383734396476065, guid: 891c5ffafd0e78b4db688dc96eaf54ea, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.36610818
+      objectReference: {fileID: 0}
+    - target: {fileID: 6613383734396476065, guid: 891c5ffafd0e78b4db688dc96eaf54ea, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6613383734396476065, guid: 891c5ffafd0e78b4db688dc96eaf54ea, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.64
+      value: 0.48
       objectReference: {fileID: 0}
     - target: {fileID: 6613383734396476065, guid: 891c5ffafd0e78b4db688dc96eaf54ea, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.64
+      value: 0.48
       objectReference: {fileID: 0}
     - target: {fileID: 8977022804784160446, guid: 891c5ffafd0e78b4db688dc96eaf54ea, type: 3}
       propertyPath: m_Sprite

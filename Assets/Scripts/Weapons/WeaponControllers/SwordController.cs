@@ -12,7 +12,7 @@ public class SwordController : MonoBehaviour
 
     List<GameObject> enemiesHit = new List<GameObject>();
 
-    void OnTriggerEnter2D(Collider2D col)
+    void OnTriggerStay2D(Collider2D col)
     {
         if (!attacking) return;
 
