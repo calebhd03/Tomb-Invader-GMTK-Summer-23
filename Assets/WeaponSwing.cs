@@ -23,6 +23,8 @@ public class WeaponSwing : MonoBehaviour
             {
                 health.TakeDamage(damage);
                 notHitYet= false;
+                
+                //blood particle from hitting player
             }
         }
     }
