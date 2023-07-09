@@ -27,8 +27,7 @@ Transform:
   m_LocalPosition: {x: 0.5339999, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 3046681287855467002}
+  m_Children: []
   m_Father: {fileID: 7131826137798659619}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -80,7 +79,8 @@ GameObject:
   - component: {fileID: 8988922202539497038}
   - component: {fileID: 7971606881422886138}
   - component: {fileID: 981385800372157025}
-  - component: {fileID: 7232104261001022080}
+  - component: {fileID: 6125421688708306835}
+  - component: {fileID: 3201275766758910785}
   m_Layer: 0
   m_Name: Haunted Jar Variant
   m_TagString: Enemy
@@ -196,7 +196,7 @@ Animator:
   m_GameObject: {fileID: 7971606881422886132}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4dd45a086a9fd964db6eac2fd4ff7cfb, type: 2}
+  m_Controller: {fileID: 9100000, guid: aec8059693792e843906e28e69c8d6da, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -224,7 +224,7 @@ MonoBehaviour:
   navMeshAgent: {fileID: 5797559745498431574}
   WeaponHolder: {fileID: 1280586445493439418}
   health: {fileID: 981385800372157025}
-  enemyCS: {fileID: 11400000, guid: d851811047151454dadb299ef40421a2, type: 2}
+  enemyCS: {fileID: 11400000, guid: 39bf5ca5c20be0b42aa0abcab9bf46af, type: 2}
   spriteHolder: {fileID: 8832544931111728623}
   craftingMaterialAnimator: {fileID: 3406009504210344361}
   distanceToPlayer: 3.4028235e+38
@@ -241,7 +241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToDie: {fileID: 7971606881422886132}
---- !u!114 &7232104261001022080
+--- !u!114 &6125421688708306835
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -250,13 +250,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 7971606881422886132}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cc438598a8ef6946a1b4f0d969e8d40, type: 3}
+  m_Script: {fileID: 11500000, guid: 95afcb246e587dd48acaaaa71406e8dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyCS: {fileID: 11400000, guid: d851811047151454dadb299ef40421a2, type: 2}
+  enemyCS: {fileID: 11400000, guid: 39bf5ca5c20be0b42aa0abcab9bf46af, type: 2}
   WeaponHolder: {fileID: 1280586445493439418}
   animator: {fileID: 8988922202539497038}
   enemy: {fileID: 7971606881422886138}
+  bullet: {fileID: 450562551447933687, guid: 00cb2e397473be644adecefb4593fa18, type: 3}
+  attackReady: 1
+--- !u!114 &3201275766758910785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7971606881422886132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cc321f2358c6cb4abfac36f2c2c0eee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyCS: {fileID: 11400000, guid: 39bf5ca5c20be0b42aa0abcab9bf46af, type: 2}
+  agent: {fileID: 5797559745498431574}
+  enemy: {fileID: 7971606881422886138}
+  timeBetweenNewPosition: 5
 --- !u!1 &8832544931111728623
 GameObject:
   m_ObjectHideFlags: 0
@@ -422,66 +440,4 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 5493054106432138661, guid: 22c54b695feafa548a9b2465219d8375, type: 3}
   m_PrefabInstance: {fileID: 2493843702443612147}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &7669079285357864262
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 305853383501815097}
-    m_Modifications:
-    - target: {fileID: 4623497554242014396, guid: 891c5ffafd0e78b4db688dc96eaf54ea, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4623497554242014396, guid: 891c5ffafd0e78b4db688dc96eaf54ea, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.044
-      objectReference: {fileID: 0}
-    - target: {fileID: 4623497554242014396, guid: 891c5ffafd0e78b4db688dc96eaf54ea, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.237
-      objectReference: {fileID: 0}
-    - target: {fileID: 4623497554242014396, guid: 891c5ffafd0e78b4db688dc96eaf54ea, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4623497554242014396, guid: 891c5ffafd0e78b4db688dc96eaf54ea, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4623497554242014396, guid: 891c5ffafd0e78b4db688dc96eaf54ea, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4623497554242014396, guid: 891c5ffafd0e78b4db688dc96eaf54ea, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4623497554242014396, guid: 891c5ffafd0e78b4db688dc96eaf54ea, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4623497554242014396, guid: 891c5ffafd0e78b4db688dc96eaf54ea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4623497554242014396, guid: 891c5ffafd0e78b4db688dc96eaf54ea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4623497554242014396, guid: 891c5ffafd0e78b4db688dc96eaf54ea, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5440362350363835782, guid: 891c5ffafd0e78b4db688dc96eaf54ea, type: 3}
-      propertyPath: m_Name
-      value: Sword Place Holder
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 891c5ffafd0e78b4db688dc96eaf54ea, type: 3}
---- !u!4 &3046681287855467002 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4623497554242014396, guid: 891c5ffafd0e78b4db688dc96eaf54ea, type: 3}
-  m_PrefabInstance: {fileID: 7669079285357864262}
   m_PrefabAsset: {fileID: 0}

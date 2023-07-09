@@ -23,7 +23,6 @@ public class ScarabAttack : MonoBehaviour, Attack
             if (health != null)
             {
                 health.TakeDamage(enemyCS.damage);
-                Debug.Log("Damage Player");
 
                 StartCoroutine(AttackCooldown());
                 //blood particle from hitting player
@@ -32,7 +31,6 @@ public class ScarabAttack : MonoBehaviour, Attack
     }
     IEnumerator AttackCooldown()
     {
-        Debug.Log("Starting cooldown");
         attackReady = false;
         yield return new WaitForSeconds(enemyCS.attackSpeed);
         attackReady = true;

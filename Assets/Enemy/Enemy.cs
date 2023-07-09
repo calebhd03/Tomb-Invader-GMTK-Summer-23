@@ -77,24 +77,31 @@ public class Enemy : MonoBehaviour, Death
             LookAtPlayer();
             navMeshAgent.SetDestination(player.transform.position);
 
-
-            if(distanceToPlayer <= enemyCS.attackDistance + .3)
-            {
-                attackScript = GetComponent<Attack>();
-                if(attackScript != null)
-                {
-                        attackScript.Attack();
-                }
-            }
+            CheckAttack();
 
             yield return null;
         }
+    }
+
+    public bool CheckAttack()
+    {
+        if (distanceToPlayer <= enemyCS.attackDistance + .3)
+        {
+            attackScript = GetComponent<Attack>();
+            if (attackScript != null)
+            {
+                attackScript.Attack();
+                return true;
+            }
+        }
+        return false;
     }
 
     public void Died()
     {
         navMeshAgent.isStopped = true;
         animator.SetTrigger("Died");
+        DisableEnemy();
     }
 
     public void DisableEnemy()
