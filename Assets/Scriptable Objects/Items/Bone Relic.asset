@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Bone Relic
   m_EditorClassIdentifier: 
   name: Bone Relic
-  sprite: {fileID: 21300000, guid: 35bcc036773da96438e62524b3641338, type: 3}
-  description: Axe chop
-  redCost: 1
-  purpleCost: 3
-  yellowCost: 1
+  sprite: {fileID: 21300000, guid: 616254175f2509f4b88500466280aef4, type: 3}
+  description: Increased Health
+  redCost: 0
+  purpleCost: 0
+  yellowCost: 300
   damageModifier: 1
   healthModifier: 1.8
   attackSpeedModifier: 1

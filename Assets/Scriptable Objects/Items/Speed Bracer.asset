@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Speed Bracer
   m_EditorClassIdentifier: 
   name: Speed Bracer
-  sprite: {fileID: 21300000, guid: 88b2bf9fc2c5e2844bb3de9c04fbe0a6, type: 3}
-  description: Increases damage, but swings slowly
-  redCost: 3
-  purpleCost: 3
-  yellowCost: 3
+  sprite: {fileID: 21300000, guid: cf9f798f550fc474eac049c9e46551fb, type: 3}
+  description: Increases attack speed and movement speed
+  redCost: 120
+  purpleCost: 0
+  yellowCost: 60
   damageModifier: 1
   healthModifier: 1
   attackSpeedModifier: 1.9

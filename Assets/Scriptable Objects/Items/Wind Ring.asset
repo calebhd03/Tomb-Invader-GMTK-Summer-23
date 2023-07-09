@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Wind Ring
   m_EditorClassIdentifier: 
   name: Wind Ring
-  sprite: {fileID: 21300000, guid: 9b379f5e92bd3924482e15a4b6797e24, type: 3}
-  description: Little Stabs
-  redCost: 3
-  purpleCost: 3
-  yellowCost: 1
+  sprite: {fileID: 21300000, guid: 127434f5cc66c064f91bb39f0209fb1b, type: 3}
+  description: Increases attack speed and attack range
+  redCost: 150
+  purpleCost: 10
+  yellowCost: 150
   damageModifier: 1.5
   healthModifier: 1
   attackSpeedModifier: 1

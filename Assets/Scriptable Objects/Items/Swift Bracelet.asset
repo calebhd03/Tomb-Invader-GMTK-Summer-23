@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Swift Bracelet
   m_EditorClassIdentifier: 
   name: Swift Bracelet
-  sprite: {fileID: 21300000, guid: 4f93c9dd61d4e76469ff69da718338d5, type: 3}
-  description: Thin and poke
-  redCost: 3
-  purpleCost: 3
-  yellowCost: 1
+  sprite: {fileID: 21300000, guid: 760561f21c71518499f9679b69efbb02, type: 3}
+  description: Increases attack rate by 50%
+  redCost: 200
+  purpleCost: 0
+  yellowCost: 200
   damageModifier: 1
   healthModifier: 1
   attackSpeedModifier: 1.5
