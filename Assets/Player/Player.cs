@@ -11,6 +11,7 @@ public class Player : MonoBehaviour, Death
     [SerializeField] private PlayerStats stats;
     [SerializeField] WaveSpawnerScriptableObject wSO;
     [SerializeField] GameObject winText;
+    [SerializeField] EnemyS enemyS;
     // Reference Player Controls for when in menu?
     private Rigidbody2D rb;
     private NavMeshAgent navMeshAgent;
@@ -153,7 +154,7 @@ public class Player : MonoBehaviour, Death
         enemies.Remove(e);
 
         //no more enemies to kill won the level
-        if(enemies.Count <= 0 )
+        if(enemies.Count <= 0 && enemyS.enemys.Count <= 0)
         {
             WonLevel();
             return;
