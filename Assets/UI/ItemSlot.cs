@@ -98,6 +98,15 @@ public class ItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         playerStats.purpleMaterials += item.purpleCost / 2;
         playerStats.yellowMaterials += item.yellowCost / 2;
 
+        if (item.damageModifier > 0)
+        {
+            playerStats.damage *= (item.damageModifier - 1) * 1;
+        }
+        else
+        {
+            playerStats.damage *= (Mathf.Abs(item.damageModifier - 1) * 1);
+        }
+
         playerStats.equippedItems.Remove(item);
 
         RemoveItem();
