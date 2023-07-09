@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b76456ef24391347822f1701d115f06, type: 3}
   m_Name: Wave Spawner
   m_EditorClassIdentifier: 
-  value: 0
-  WavesTried: 0
+  tombScarabs: 5
+  sapperAsp: 5
+  hauntedJar: 5
+  boneWarrior: 5
+  sphinxGolem: 5
+  WavesTried: 5

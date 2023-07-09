@@ -262,7 +262,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 272467105}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.19, y: -1.81, z: -10}
+  m_LocalPosition: {x: -0.82, y: 2.9, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -303,6 +303,105 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+
+--- !u!1001 &329989792
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8006874879770432944, guid: 6f89af583cbab1d4b83646c3f0c54883, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8006874879770432944, guid: 6f89af583cbab1d4b83646c3f0c54883, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.5878525
+      objectReference: {fileID: 0}
+    - target: {fileID: 8006874879770432944, guid: 6f89af583cbab1d4b83646c3f0c54883, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.16166115
+      objectReference: {fileID: 0}
+    - target: {fileID: 8006874879770432944, guid: 6f89af583cbab1d4b83646c3f0c54883, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.6874676
+      objectReference: {fileID: 0}
+    - target: {fileID: 8006874879770432944, guid: 6f89af583cbab1d4b83646c3f0c54883, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8006874879770432944, guid: 6f89af583cbab1d4b83646c3f0c54883, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8006874879770432944, guid: 6f89af583cbab1d4b83646c3f0c54883, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8006874879770432944, guid: 6f89af583cbab1d4b83646c3f0c54883, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8006874879770432944, guid: 6f89af583cbab1d4b83646c3f0c54883, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8006874879770432944, guid: 6f89af583cbab1d4b83646c3f0c54883, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8006874879770432944, guid: 6f89af583cbab1d4b83646c3f0c54883, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8006874879770432945, guid: 6f89af583cbab1d4b83646c3f0c54883, type: 3}
+      propertyPath: P
+      value: 
+      objectReference: {fileID: 1261843837}
+    - target: {fileID: 8006874879770432945, guid: 6f89af583cbab1d4b83646c3f0c54883, type: 3}
+      propertyPath: sapperAsp
+      value: 
+      objectReference: {fileID: 3889248993036457186, guid: 48348d1e514f16249bd8081fafae9908, type: 3}
+    - target: {fileID: 8006874879770432945, guid: 6f89af583cbab1d4b83646c3f0c54883, type: 3}
+      propertyPath: hauntedJar
+      value: 
+      objectReference: {fileID: 3889248993036457186, guid: 48348d1e514f16249bd8081fafae9908, type: 3}
+    - target: {fileID: 8006874879770432945, guid: 6f89af583cbab1d4b83646c3f0c54883, type: 3}
+      propertyPath: SpawnNumber
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8006874879770432945, guid: 6f89af583cbab1d4b83646c3f0c54883, type: 3}
+      propertyPath: boneWarrior
+      value: 
+      objectReference: {fileID: 3889248993036457186, guid: 48348d1e514f16249bd8081fafae9908, type: 3}
+    - target: {fileID: 8006874879770432945, guid: 6f89af583cbab1d4b83646c3f0c54883, type: 3}
+      propertyPath: spawnAmount
+      value: 
+      objectReference: {fileID: 11400000, guid: 594e87c6cb5391949a37bb6c2795a780, type: 2}
+    - target: {fileID: 8006874879770432945, guid: 6f89af583cbab1d4b83646c3f0c54883, type: 3}
+      propertyPath: sphinxGolem
+      value: 
+      objectReference: {fileID: 3889248993036457186, guid: 48348d1e514f16249bd8081fafae9908, type: 3}
+    - target: {fileID: 8006874879770432945, guid: 6f89af583cbab1d4b83646c3f0c54883, type: 3}
+      propertyPath: tombScarabs
+      value: 
+      objectReference: {fileID: 3889248993036457186, guid: 48348d1e514f16249bd8081fafae9908, type: 3}
+    - target: {fileID: 8006874879770432945, guid: 6f89af583cbab1d4b83646c3f0c54883, type: 3}
+      propertyPath: enemys.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8006874879770432945, guid: 6f89af583cbab1d4b83646c3f0c54883, type: 3}
+      propertyPath: enemys.Array.data[0]
+      value: 
+      objectReference: {fileID: 3889248993036457186, guid: 48348d1e514f16249bd8081fafae9908, type: 3}
+    - target: {fileID: 8006874879770432950, guid: 6f89af583cbab1d4b83646c3f0c54883, type: 3}
+      propertyPath: m_Name
+      value: EnemySpawner
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6f89af583cbab1d4b83646c3f0c54883, type: 3}
+
 --- !u!1001 &353647112
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1151,7 +1250,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1851221060}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.19, y: -1.81, z: -10}
+  m_LocalPosition: {x: -0.82, y: 2.9, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1172,11 +1271,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1054553482596496180, guid: 40aad37e8af656b4bbb446fc6f08b8fb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.19
+      value: -0.82
       objectReference: {fileID: 0}
     - target: {fileID: 1054553482596496180, guid: 40aad37e8af656b4bbb446fc6f08b8fb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.81
+      value: 2.9
       objectReference: {fileID: 0}
     - target: {fileID: 1054553482596496180, guid: 40aad37e8af656b4bbb446fc6f08b8fb, type: 3}
       propertyPath: m_LocalPosition.z
