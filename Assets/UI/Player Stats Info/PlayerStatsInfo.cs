@@ -12,13 +12,13 @@ public class PlayerStatsInfo : MonoBehaviour
         //positive modifier
         if(modifier >0)
         {
-            modifierText.text = modifier.ToString();
+            modifierText.text = modifier.ToString() + "%";
             modifierText.color = Color.green;
         }
         //negative modifier
         else if(modifier < 0)
         {
-            modifierText.text = modifier.ToString();
+            modifierText.text = modifier.ToString() + "%";
             modifierText.color = Color.red;
         }
         else
@@ -28,6 +28,6 @@ public class PlayerStatsInfo : MonoBehaviour
         }
 
         //set info text
-        infoText.text = info.ToString();
+        infoText.text = info.ToString(); 
     }
 }
