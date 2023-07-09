@@ -19,4 +19,5 @@ MonoBehaviour:
   theoriteGain: 0
   chaseDistance: 5
   chaseSpeed: 2
-  attackSpeed: 1
+  attackSpeed: 3
+  attackDistance: 0.9
