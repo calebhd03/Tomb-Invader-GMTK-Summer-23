@@ -5,15 +5,20 @@ using UnityEngine;
 public class EnemyS : MonoBehaviour
 {
     [SerializeField]
-    private EnemyCS spawnAmount;
+    private WaveSpawnerScriptableObject spawnAmount;
 
     public float SpawnNumber = 0;
-    public GameObject[] enemys;
+    public List<GameObject> enemys;
+    public GameObject tombScarabs;
+    public GameObject sapperAsp;
+    public GameObject hauntedJar;
+    public GameObject boneWarrior;
+    public GameObject sphinxGolem;
 
 
     void Start()
     {
-        SpawnNumber = spawnAmount.Value;
+        SpawnNumber = spawnAmount.tombScarabs;
         StartCoroutine(Spawner());
     }
 
@@ -25,13 +30,34 @@ public class EnemyS : MonoBehaviour
 
     IEnumerator Spawner()
     {
-        while(SpawnNumber >= 1)
+        for(int i = 0; i < spawnAmount.tombScarabs; i++)
         {
-            int randomIndex = Random.Range(0, enemys.Length);
-            Vector3 randonSpawnPosition = new Vector3(Random.Range(-10, 11), 1, Random.Range(-10, 11));
+            enemys.Add(tombScarabs);
+        }
+        for (int i = 0; i < spawnAmount.sapperAsp; i++)
+        {
+            enemys.Add(sapperAsp);
+        }
+        for (int i = 0; i < spawnAmount.hauntedJar; i++)
+        {
+            enemys.Add(hauntedJar);
+        }
+        for (int i = 0; i < spawnAmount.boneWarrior; i++)
+        {
+            enemys.Add(boneWarrior);
+        }
+        for (int i = 0; i < spawnAmount.sphinxGolem; i++)
+        {
+            enemys.Add(sphinxGolem);
+        }
+
+        while (enemys.Count > 0)
+        {
+            int randomIndex = Random.Range(0, enemys.Count);
+            Vector3 randonSpawnPosition = new Vector3(Random.Range(-10, 11), Random.Range(-10, 11), 1);
 
             Instantiate(enemys[randomIndex], randonSpawnPosition, Quaternion.identity);
-            SpawnNumber = SpawnNumber -= 1;
+            enemys.RemoveAt(randomIndex);
             yield return new WaitForSeconds(2.0f);
         }
     }
