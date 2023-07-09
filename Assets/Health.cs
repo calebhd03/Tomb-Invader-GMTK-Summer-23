@@ -5,9 +5,9 @@ using UnityEngine;
 public class Health: MonoBehaviour
 {
     [SerializeField] GameObject objectToDie;
+    [SerializeField] private float currentHealth;
 
     private float maxHealth;
-    private float currentHealth;
 
 
 

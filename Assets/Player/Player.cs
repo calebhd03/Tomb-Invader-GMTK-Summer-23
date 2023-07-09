@@ -1,18 +1,23 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour, Death
 {
     // References
     [SerializeField] private PlayerStats stats;
+    [SerializeField] WaveSpawnerScriptableObject wSO;
+    [SerializeField] GameObject winText;
+    [SerializeField] EnemyS enemyS;
     // Reference Player Controls for when in menu?
     private Rigidbody2D rb;
     private NavMeshAgent navMeshAgent;
 
     // Enemy Tracking
-    private Enemy[] enemies; // Array of Enemy script instances (Should this be a list rather than Array?)
+    public List<GameObject> enemies = new List<GameObject>(); // Array of Enemy script instances (Should this be a list rather than Array?)
     private Transform target; // For finding closest target
     private Vector2 directionToEnemy;
     private Vector2 localScale;
@@ -25,15 +30,24 @@ public class Player : MonoBehaviour, Death
 
     // Sword
     public GameObject sword;
+    public GameObject spriteHolder;
     private Vector2 weaponLocalScale;
+
+    public static Action<GameObject> EnemyAdded;
+    public static Action<GameObject> EnemyKilled;
 
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
         rb = GetComponent<Rigidbody2D>();
-        enemies = FindObjectsOfType<Enemy>(); // Find all Enemy script instances in the scene
-        localScale = transform.localScale;
-        weaponLocalScale = sword.transform.localScale;
+
+        FillOutValues();
+        GetComponent<Health>().SetMaxHealth(stats.health);
+    }
+
+    public void FillOutValues()
+    {
+        navMeshAgent.speed = stats.movementSpeed;
     }
 
     private void FixedUpdate()
@@ -50,7 +64,7 @@ public class Player : MonoBehaviour, Death
     {
         // Find the closest enemy with the "Enemy" script attached
         closestDistance = Mathf.Infinity;
-        foreach (Enemy enemy in enemies)
+        foreach (GameObject enemy in enemies)
         {
             distanceToEnemy = Vector2.Distance(transform.position, enemy.transform.position);
             if (distanceToEnemy < closestDistance)
@@ -58,20 +72,29 @@ public class Player : MonoBehaviour, Death
                 closestDistance = distanceToEnemy;
                 target = enemy.transform;
 
-                // Face towards enemy (Weapon flips, but is inconsistent)
-                Vector2 directionToEnemy = enemy.transform.position - transform.position;
-                if (directionToEnemy.x > 0)
-                {
-                    transform.localScale = new Vector2(Mathf.Abs(localScale.x), localScale.y);
-                    sword.transform.localScale = new Vector2(Mathf.Abs(weaponLocalScale.x), weaponLocalScale.y);
-                }
-                else if (directionToEnemy.x < 0)
-                {
-                    transform.localScale = new Vector2(-Mathf.Abs(localScale.x), localScale.y);
-                    sword.transform.localScale = new Vector2(-Mathf.Abs(weaponLocalScale.x), weaponLocalScale.y);
-                }
+                LookAtEnemy(enemy);
             }
         }
+    }
+    public void LookAtEnemy(GameObject enemy)
+    {
+        Vector3 oldScale = spriteHolder.transform.localScale;
+        if (enemy.transform.position.x < this.transform.position.x)
+        {
+            if (oldScale.x > 0)
+            {
+                spriteHolder.transform.localScale = new Vector3(oldScale.x * -1, oldScale.y, oldScale.z);
+            }
+                
+        }
+        else
+        {
+            if (oldScale.x < 0)
+            {
+                spriteHolder.transform.localScale = new Vector3(oldScale.x * -1, oldScale.y, oldScale.z);
+            }
+        }
+
     }
 
     private void MovePlayer()
@@ -80,24 +103,8 @@ public class Player : MonoBehaviour, Death
         {
             navMeshAgent.SetDestination(target.position);
         }
-        else
-        {
-            // No target found, stop the player's movement
-            rb.velocity = Vector2.zero;
-        }
     }
 
-    private void LateUpdate()
-    {
-        if (rb.velocity.x > 0)
-        {
-            transform.localScale = new Vector3(localScale.x, localScale.y);
-        }
-        else if (rb.velocity.x < 0)
-        {
-            transform.localScale = new Vector3(-localScale.x, localScale.y);
-        }
-    }
 
     bool IsPlayerWithinAttackRange()
     {
@@ -107,30 +114,13 @@ public class Player : MonoBehaviour, Death
         return distanceToPlayer <= attackRange;
     }
 
-    void PerformAttack()
+    public void Swing()
     {
-        // Play attack animation
-
-        // Perform action
-
-        
+        sword.GetComponent<SwordController>().Swing();
     }
-
-    void OnTriggerEnter2D(Collider2D col)
+    public void StopSwing()
     {
-        if (col.CompareTag("Enemy"))
-        {
-            // Check if sword collides with enemy
-            Health enemyHealth = col.GetComponent<Health>();
-
-            if (enemyHealth != null)
-            {
-                // Apply damage to enemy
-                enemyHealth.TakeDamage(5);
-            
-                // Instantiate sword attack effect at enemy's position
-            }
-        }
+        sword.GetComponent<SwordController>().StopSwing();
     }
 
     // Can the attack state machine be run within this script?
@@ -146,5 +136,51 @@ public class Player : MonoBehaviour, Death
     public void Died()
     {
         // Handle player death
+
+        GetComponent<Animator>().SetTrigger("Died");
+        GetComponent<NavMeshAgent>().isStopped= true;
+    }
+
+    public void RestartLevel()
+    {
+        wSO.WavesTried++;
+
+        SceneManager.LoadScene(0);
+    }
+
+    public void RemoveEnemyFromList(GameObject e)
+    {
+        Debug.Log("Remove enemy");
+        enemies.Remove(e);
+
+        //no more enemies to kill won the level
+        if(enemies.Count <= 0 && enemyS.enemys.Count <= 0)
+        {
+            WonLevel();
+            return;
+        }
+    }
+    public void AddEnemyToList(GameObject e)
+    {
+        Debug.Log("Add enemy");
+        enemies.Add(e);
+    }
+
+    public void WonLevel()
+    {
+        winText.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+    private void OnEnable()
+    {
+        EnemyAdded += AddEnemyToList;
+        EnemyKilled += RemoveEnemyFromList;
+    }
+
+    private void OnDisable()
+    {
+        EnemyAdded -= AddEnemyToList;
+        EnemyKilled -= RemoveEnemyFromList;
     }
 }
