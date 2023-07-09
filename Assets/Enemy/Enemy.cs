@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour, Death
 {
     [SerializeField] Animator animator;
-    [SerializeField] Transform player;
+    public Transform player;
     [SerializeField] NavMeshAgent navMeshAgent;
     [SerializeField] GameObject WeaponHolder;
     [SerializeField] Health health;
@@ -23,7 +24,12 @@ public class Enemy : MonoBehaviour, Death
     void Start()
     {
         FindWeaponSwing();
+
         health.SetMaxHealth(enemyCS.maxHealth);
+    }
+
+    public void FillOutValues()
+    {
     }
 
     // Update is called once per frame
