@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4f0c4c2d1ee40874191ff92520021e4d, type: 3}
-  m_Name: Item Dagger
+  m_Name: Swift Bracelet
   m_EditorClassIdentifier: 
-  name: Dagger
-  sprite: {fileID: 21300000, guid: 9b379f5e92bd3924482e15a4b6797e24, type: 3}
-  description: Little Stabs
+  name: Swift Bracelet
+  sprite: {fileID: 21300000, guid: 4f93c9dd61d4e76469ff69da718338d5, type: 3}
+  description: Thin and poke
   redCost: 3
   purpleCost: 3
   yellowCost: 1
-  damageModifier: 2
-  healthModifier: 0
-  attackSpeedModifier: 1
+  damageModifier: 1
+  healthModifier: 1
+  attackSpeedModifier: 1.5
   movementSpeedModifier: 1

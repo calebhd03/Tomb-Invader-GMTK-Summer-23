@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4f0c4c2d1ee40874191ff92520021e4d, type: 3}
-  m_Name: Item BasicSpear
+  m_Name: Speed Bracer
   m_EditorClassIdentifier: 
-  name: Basic Spear
-  sprite: {fileID: 21300000, guid: 4f93c9dd61d4e76469ff69da718338d5, type: 3}
-  description: Thin and poke
+  name: Speed Bracer
+  sprite: {fileID: 21300000, guid: 88b2bf9fc2c5e2844bb3de9c04fbe0a6, type: 3}
+  description: Increases damage, but swings slowly
   redCost: 3
   purpleCost: 3
-  yellowCost: 1
+  yellowCost: 3
   damageModifier: 1
-  healthModifier: 0
-  attackSpeedModifier: 0.4
-  movementSpeedModifier: 0
+  healthModifier: 1
+  attackSpeedModifier: 1.9
+  movementSpeedModifier: 1.9
