@@ -17,7 +17,7 @@ public class WeaponSwing : MonoBehaviour
         notHitYet= false;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay2D(Collider2D other)
     {
         if (!other.CompareTag("Player")) return;
 

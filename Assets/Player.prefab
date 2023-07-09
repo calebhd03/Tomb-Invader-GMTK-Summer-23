@@ -111,7 +111,7 @@ MonoBehaviour:
   enemies: []
   attackRange: 1.5
   sword: {fileID: 1054553482699469824}
-  spriteHolder: {fileID: 1054553482881500796}
+  spriteHolder: {fileID: 6418196727808886745}
 --- !u!114 &7784969486927951182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,7 +272,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.046421826, y: -0.09}
+  m_Offset: {x: -0.20749462, y: -0.16421986}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -283,7 +283,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.35009468, y: 0.7307535}
+  m_Size: {x: 1.0575516, y: 1.1002735}
   m_EdgeRadius: 0
 --- !u!114 &6271215467719661776
 MonoBehaviour:

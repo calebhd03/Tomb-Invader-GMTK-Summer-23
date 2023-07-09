@@ -39,8 +39,6 @@ public class Player : MonoBehaviour, Death
         navMeshAgent = GetComponent<NavMeshAgent>();
         rb = GetComponent<Rigidbody2D>();
 
-        localScale = transform.localScale;
-        weaponLocalScale = sword.transform.localScale;
         FillOutValues();
         GetComponent<Health>().SetMaxHealth(stats.health);
     }
@@ -79,7 +77,6 @@ public class Player : MonoBehaviour, Death
     public void LookAtEnemy(GameObject enemy)
     {
         Vector3 oldScale = spriteHolder.transform.localScale;
-        Vector3 oldPosition = sword.transform.position;
         if (enemy.transform.position.x < this.transform.position.x)
         {
             if (oldScale.x > 0)
