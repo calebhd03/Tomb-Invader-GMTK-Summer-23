@@ -20,4 +20,4 @@ MonoBehaviour:
   chaseDistance: 1000
   chaseSpeed: 2
   attackSpeed: 5
-  attackDistance: 1000
+  attackDistance: 1
